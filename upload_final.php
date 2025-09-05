@@ -33,10 +33,7 @@ if (isset($_POST["submit"])) {
         echo "Error: File kosong.";
         exit;
     }
-    // Handle UTF-16 encoded files
-    if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
-        $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
-    }
+    
     libxml_use_internal_errors(true);
     $doc = new DOMDocument();
     $loaded = @$doc->loadHTML($html);
@@ -54,7 +51,7 @@ if (isset($_POST["submit"])) {
     $settings = extractSettings($doc);
     
     // Extract Trades/Deals Table (enhanced to handle both formats)
-    $trades = extractTrades($doc);
+    $trades = extractTradesEnhanced($doc);
     
     // Calculate Monthly Statistics
     $monthlyStats = calculateMonthlyStats($trades);
@@ -101,7 +98,7 @@ function extractSettings($doc) {
     return $settings;
 }
 
-function extractTrades($doc) {
+function extractTradesEnhanced($doc) {
     $trades = [];
     $tables = $doc->getElementsByTagName('table');
     
@@ -231,7 +228,9 @@ function calculateMonthlyStats($trades) {
         if (!isset($trade['Time']) || !isset($trade['Profit'])) continue;
         
         $time = $trade['Time'];
-        $profit = floatval(str_replace(',', '', $trade['Profit']));
+        // Remove commas from profit for proper float conversion
+        $profitStr = str_replace(',', '', $trade['Profit']);
+        $profit = floatval($profitStr);
         
         // Parse date to get month and year
         // Assuming format like "2023.05.15 14:30:00"
@@ -473,8 +472,8 @@ function displayResults($settings, $monthlyStats) {
                 <thead>
                 <tr>
                     <th onclick='sortTable(0)' class='sortable'>Bulan Tahun</th>
-                    <th onclick='sortTable(1)' class='sortable'>Winning Trades</th>
-                    <th onclick='sortTable(2)' class='sortable'>Lossing Trades</th>
+                    <th onclick='sortTable(1)' class='sortable'>Profit Trade</th>
+                    <th onclick='sortTable(2)' class='sortable'>Loss Trade</th>
                     <th onclick='sortTable(3)' class='sortable'>Jumlah Trade</th>
                     <th onclick='sortTable(4)' class='sortable'>Winrate</th>
                     <th onclick='sortTable(5)' class='sortable'>Gross Profit</th>
@@ -500,8 +499,8 @@ function displayResults($settings, $monthlyStats) {
             
             echo "<tr>
                     <td>{$bulanTahun}</td>
-                    <td>" . number_format($stat['winning_trades'], 2) . "</td>
-                    <td>" . number_format($stat['losing_trades'], 2) . "</td>
+                    <td>" . number_format($stat['profit_trade'], 2) . "</td>
+                    <td>" . number_format($stat['loss_trade'], 2) . "</td>
                     <td>{$stat['jumlah_trade']}</td>
                     <td>" . number_format($stat['winrate'], 2) . "%</td>
                     <td>" . number_format($stat['gross_profit'], 2) . "</td>
@@ -517,7 +516,8 @@ function displayResults($settings, $monthlyStats) {
         
         echo "</tbody></table>";
     } else {
-        echo "<p>Tidak ada data bulanan yang ditemukan.</p>";
+        echo "<p>Tidak ada data bulanan yang ditemukan. Pastikan file laporan berisi data trades.</p>";
+        echo "<p>Jumlah trades ditemukan: " . count($trades) . "</p>";
     }
     
     echo "<br><a href='index.php'>Unggah file lain</a>

@@ -1,68 +1,28 @@
 <?php
-if (isset($_POST["submit"])) {
-    $target_file = basename($_FILES["reportFile"]["name"]);
-    $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+// Simulate the upload process with our HTML file
+$target_file = "ReportTester-10005982837 ini.html";
 
-    // Pastikan file adalah .htm atau .html
-    if ($file_type != "htm" && $file_type != "html") {
-        echo "Maaf, hanya file .htm atau .html yang diizinkan.";
-        exit;
-    }
+// Load and convert UTF-16 encoded HTML file
+$html = file_get_contents($target_file);
+// Convert UTF-16 to UTF-8
+$html = iconv("UTF-16", "UTF-8//IGNORE", $html);
 
-    // Pindahkan file yang diunggah
-    if (!move_uploaded_file($_FILES["reportFile"]["tmp_name"], $target_file)) {
-        echo "Error: Gagal mengunggah file.";
-        exit;
-    }
+$doc = new DOMDocument();
+@$doc->loadHTML($html); // Gunakan @ untuk menekan warning dari HTML yang tidak valid
 
-    // Mulai parsing file
-    $html = file_get_contents($target_file);
-    
-    // Handle UTF-16 encoded files
-    if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
-        $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
-    }
-    
-    // Enhanced error handling
-    if ($html === false) {
-        echo "Error: Gagal membaca file.";
-        exit;
-    }
-    
-    if (empty($html)) {
-        echo "Error: File kosong.";
-        exit;
-    }
-    // Handle UTF-16 encoded files
-    if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
-        $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
-    }
-    libxml_use_internal_errors(true);
-    $doc = new DOMDocument();
-    $loaded = @$doc->loadHTML($html);
-    
-    if (!$loaded) {
-        echo "Error: Gagal mem-parsing HTML.";
-        $errors = libxml_get_errors();
-        foreach ($errors as $error) {
-            echo "<br>Error detail: " . htmlspecialchars($error->message);
-        }
-        exit;
-    }
+// Extract Settings
+$settings = extractSettings($doc);
 
-    // Extract Settings
-    $settings = extractSettings($doc);
-    
-    // Extract Trades/Deals Table (enhanced to handle both formats)
-    $trades = extractTrades($doc);
-    
-    // Calculate Monthly Statistics
-    $monthlyStats = calculateMonthlyStats($trades);
-    
-    // Display Results
-    displayResults($settings, $monthlyStats);
-}
+// Extract Trades Table
+$trades = extractTrades($doc);
 
+// Calculate Monthly Statistics
+$monthlyStats = calculateMonthlyStats($trades);
+
+// Display Results
+displayResults($settings, $monthlyStats);
+
+// Include the functions from upload.php
 function extractSettings($doc) {
     $settings = [];
     
@@ -473,8 +433,8 @@ function displayResults($settings, $monthlyStats) {
                 <thead>
                 <tr>
                     <th onclick='sortTable(0)' class='sortable'>Bulan Tahun</th>
-                    <th onclick='sortTable(1)' class='sortable'>Winning Trades</th>
-                    <th onclick='sortTable(2)' class='sortable'>Lossing Trades</th>
+                    <th onclick='sortTable(1)' class='sortable'>Profit Trade</th>
+                    <th onclick='sortTable(2)' class='sortable'>Loss Trade</th>
                     <th onclick='sortTable(3)' class='sortable'>Jumlah Trade</th>
                     <th onclick='sortTable(4)' class='sortable'>Winrate</th>
                     <th onclick='sortTable(5)' class='sortable'>Gross Profit</th>
@@ -500,8 +460,8 @@ function displayResults($settings, $monthlyStats) {
             
             echo "<tr>
                     <td>{$bulanTahun}</td>
-                    <td>" . number_format($stat['winning_trades'], 2) . "</td>
-                    <td>" . number_format($stat['losing_trades'], 2) . "</td>
+                    <td>" . number_format($stat['profit_trade'], 2) . "</td>
+                    <td>" . number_format($stat['loss_trade'], 2) . "</td>
                     <td>{$stat['jumlah_trade']}</td>
                     <td>" . number_format($stat['winrate'], 2) . "%</td>
                     <td>" . number_format($stat['gross_profit'], 2) . "</td>

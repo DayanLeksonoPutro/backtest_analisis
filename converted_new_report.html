@@ -1,0 +1,844 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Strategy Tester Report</title>
+    <meta name="generator" content="strategy tester">
+    <style type="text/css">
+    <!--
+    @media screen {
+      td { font: 8pt  Tahoma,Arial; }
+      th { font: 10pt Tahoma,Arial; }
+    }
+    @media print {
+      td { font: 7pt Tahoma,Arial; }
+      th { font: 9pt Tahoma,Arial; }
+    }
+    .msdate { mso-number-format:"General Date"; }
+    .mspt   { mso-number-format:\#\,\#\#0\.00;  }
+    body {margin:1px;}
+    //-->
+    </style>
+  </head>
+<body>
+<div align="center">
+<table cellspacing="1" cellpadding="3" border="0">
+   <tr align="center">
+      <td colspan="13"><div style="font: 14pt Tahoma"><b>Strategy Tester Report</b><br></div></td>
+   </tr>
+   <tr align="center">
+      <td colspan="13"><div style="font: 10pt Tahoma"><b>MetaQuotes-Demo (Build 5222)</b><br></div></td>
+   </tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+    </tr>
+   <tr>
+      <td colspan="13" align="center"><div style="font: 10pt Tahoma"><b>Settings</b></div></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Expert:</td>
+      <td nowrap colspan="10" align="left"><b>Breakout_Waktu</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Symbol:</td>
+      <td nowrap colspan="10" align="left"><b>USDJPY</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Period:</td>
+      <td nowrap colspan="10" align="left"><b>M5 (2025.01.01 - 2025.06.30)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Inputs:</td>
+      <td nowrap colspan="10" align="left"><b>ModeClose=0</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>RiskInUSD=100</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>RewardInUSD=120</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>StartHour=2</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>StartMinute=0</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>HourReff=1</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>MinuteReff=0</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>WaktuTunggu=4</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>UseCloseAll=false</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>CloseAllHour=23</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="10" align="left"><b>CloseAllMinute=0</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3" >Company:</td>
+      <td nowrap colspan="10" align="left"><b>MetaQuotes Ltd.</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3" >Currency:</td>
+      <td nowrap colspan="10" align="left"><b>USD</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3" >Initial Deposit:</td>
+      <td nowrap colspan="10" align="left"><b>10 000.00</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3" >Leverage:</td>
+      <td nowrap colspan="10" align="left"><b>1:500</b></td>
+   </tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+    </tr>
+   <tr>
+      <td colspan="13" align="center"><div style="font: 10pt Tahoma"><b>Results</b></div></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">History Quality:</td>
+      <td nowrap><b>99%</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Bars:</td>
+      <td nowrap><b>36469</b></td>
+      <td nowrap colspan="3">Ticks:</td>
+      <td nowrap><b>11227457</b></td>
+      <td nowrap colspan="3">Symbols:</td>
+      <td nowrap colspan="2"><b>1</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Total Net Profit:</td>
+      <td nowrap><b>2 915.98</b></td>
+      <td nowrap colspan="3">Balance Drawdown Absolute:</td>
+      <td nowrap><b>685.76</b></td>
+      <td nowrap colspan="3">Equity Drawdown Absolute:</td>
+      <td nowrap colspan="2"><b>762.24</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Gross Profit:</td>
+      <td nowrap><b>8 348.26</b></td>
+      <td nowrap colspan="3">Balance Drawdown Maximal:</td>
+      <td nowrap><b>805.79 (7.96%)</b></td>
+      <td nowrap colspan="3">Equity Drawdown Maximal:</td>
+      <td nowrap colspan="2"><b>887.60 (8.77%)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Gross Loss:</td>
+      <td nowrap><b>-5 432.28</b></td>
+      <td nowrap colspan="3">Balance Drawdown Relative:</td>
+      <td nowrap><b>7.96% (805.79)</b></td>
+      <td nowrap colspan="3">Equity Drawdown Relative:</td>
+      <td nowrap colspan="2"><b>8.77% (887.60)</b></td>
+   </tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+    </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Profit Factor:</td>
+      <td nowrap><b>1.54</b></td>
+      <td nowrap colspan="3">Expected Payoff:</td>
+      <td nowrap><b>23.71</b></td>
+      <td nowrap colspan="3">Margin Level:</td>
+      <td nowrap colspan="2"><b>4475.75%</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Recovery Factor:</td>
+      <td nowrap><b>3.29</b></td>
+      <td nowrap colspan="3">Sharpe Ratio:</td>
+      <td nowrap><b>7.45</b></td>
+      <td nowrap colspan="3">Z-Score:</td>
+      <td nowrap colspan="2"><b>0.54 (41.08%)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">AHPR:</td>
+      <td nowrap><b>1.0021 (0.21%)</b></td>
+      <td nowrap colspan="3">LR Correlation:</td>
+      <td nowrap><b>0.97</b></td>
+      <td nowrap colspan="3">OnTester result:</td>
+      <td nowrap colspan="2"><b>0</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">GHPR:</td>
+      <td nowrap><b>1.0021 (0.21%)</b></td>
+      <td nowrap colspan="3">LR Standard Error:</td>
+      <td nowrap><b>296.98</b></td>
+      <td nowrap colspan="3"></td>
+      <td nowrap colspan="2"><b></b></td>
+   </tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+    </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Total Trades:</td>
+      <td nowrap><b>123</b></td>
+      <td nowrap colspan="3">Short Trades (won %):</td>
+      <td nowrap><b>67 (61.19%)</b></td>
+      <td nowrap colspan="3">Long Trades (won %):</td>
+      <td nowrap colspan="2"><b>56 (50.00%)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Total Deals:</td>
+      <td nowrap><b>246</b></td>
+      <td nowrap colspan="3">Profit Trades (% of total):</td>
+      <td nowrap><b>69 (56.10%)</b></td>
+      <td nowrap colspan="3">Loss Trades (% of total):</td>
+      <td nowrap colspan="2"><b>54 (43.90%)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="4"></td>
+      <td nowrap colspan="3">Largest profit trade:</td>
+      <td nowrap><b>157.47</b></td>
+      <td nowrap colspan="3">Largest loss trade:</td>
+      <td nowrap colspan="2"><b>-102.81</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="4"></td>
+      <td nowrap colspan="3">Average profit trade:</td>
+      <td nowrap><b>120.99</b></td>
+      <td nowrap colspan="3">Average loss trade:</td>
+      <td nowrap colspan="2"><b>-100.60</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="4"></td>
+      <td nowrap colspan="3">Maximum consecutive wins ($):</td>
+      <td nowrap><b>8 (961.93)</b></td>
+      <td nowrap colspan="3">Maximum consecutive losses ($):</td>
+      <td nowrap colspan="2"><b>5 (-504.77)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="4"></td>
+      <td nowrap colspan="3">Maximal consecutive profit (count):</td>
+      <td nowrap><b>961.93 (8)</b></td>
+      <td nowrap colspan="3">Maximal consecutive loss (count):</td>
+      <td nowrap colspan="2"><b>-504.77 (5)</b></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="4"></td>
+      <td nowrap colspan="3">Average consecutive wins:</td>
+      <td nowrap><b>2</b></td>
+      <td nowrap colspan="3">Average consecutive losses:</td>
+      <td nowrap colspan="2"><b>2</b></td>
+   </tr>
+   <tr align="right">
+      <td colspan="13" style="height: 10px"></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13"><img src="ReportTester-5036666090.png" title="Balance graph" width=820 height=200 border=0 alt="Graph"></th>
+   </tr>
+   <tr align="right">
+      <td colspan="13" style="height: 10px"></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13"><img src="ReportTester-5036666090-hst.png" width=860 height=400 border=0 alt="Graph"></th>
+   </tr>
+   <tr align="right">
+      <td colspan="13" style="height: 10px"></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Correlation (Profits,MFE):</td>
+      <td nowrap><b>0.88</b></td>
+      <td nowrap colspan="3">Correlation (Profits,MAE):</td>
+      <td nowrap><b>0.82</b></td>
+      <td nowrap colspan="3">Correlation (MFE,MAE):</td>
+      <td nowrap colspan="2"><b>0.7241</b></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13"><img src="ReportTester-5036666090-mfemae.png" width=860 height=400 border=0 alt="Graph"></th>
+   </tr>
+   <tr align="right">
+      <td colspan="13" style="height: 10px"></td>
+   </tr>
+   <tr align="right">
+      <td nowrap colspan="3">Minimal position holding time:</td>
+      <td nowrap><b>0:02:55</b></td>
+      <td nowrap colspan="3">Maximal position holding time:</td>
+      <td nowrap><b>36:12:31</b></td>
+      <td nowrap colspan="3">Average position holding time:</td>
+      <td nowrap colspan="2"><b>4:38:36</b></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13"><img src="ReportTester-5036666090-holding.png" width=860 height=200 border=0 alt="Graph"></th>
+   </tr>
+   <tr align="right">
+      <td colspan="13" style="height: 10px"></td>
+   </tr>
+</table>
+<table cellspacing="1" cellpadding="3" border="0">
+   <tr>
+      <td style="width: 90px;height: 10px"></td>
+      <td style="width: 40px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 70px;"></td>
+      <td style="width: 70px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 60px;"></td>
+      <td style="width: 100px;"></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13" style="height: 25px"><div style="font: 10pt Tahoma"><b>Orders</b></div></th>
+   </tr>
+   <tr align="center" bgcolor="#E5F0FC">
+      <td nowrap style="height: 30px"><b>Open Time</b></td>
+      <td nowrap><b>Order</b></td>
+      <td nowrap><b>Symbol</b></td>
+      <td nowrap><b>Type</b></td>
+      <td nowrap colspan="2"><b>Volume</b></td>
+      <td nowrap><b>Price</b></td>
+      <td nowrap><b>S / L</b></td>
+      <td nowrap><b>T / P</b></td>
+      <td nowrap colspan="2"><b>Time</b></td>
+      <td nowrap><b>State</b></td>
+      <td nowrap><b>Comment</b></td>
+   </tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.02 04:55:00</td><td>2</td><td>USDJPY</td><td>sell</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td>158.239</td><td>156.145</td><td colspan="2">2025.01.02 04:55:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.02 08:34:39</td><td>3</td><td>USDJPY</td><td>buy</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.02 08:34:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.03 05:50:00</td><td>4</td><td>USDJPY</td><td>buy</td><td colspan="2">0.7 / 0.7</td><td>0.000</td><td>156.996</td><td>157.977</td><td colspan="2">2025.01.03 05:50:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.03 05:59:01</td><td>5</td><td>USDJPY</td><td>sell</td><td colspan="2">0.7 / 0.7</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.03 05:59:01</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.07 03:10:00</td><td>6</td><td>USDJPY</td><td>buy</td><td colspan="2">0.32 / 0.32</td><td>0.000</td><td>157.276</td><td>159.406</td><td colspan="2">2025.01.07 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.07 08:08:23</td><td>7</td><td>USDJPY</td><td>sell</td><td colspan="2">0.32 / 0.32</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.07 08:08:23</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.08 06:25:00</td><td>8</td><td>USDJPY</td><td>buy</td><td colspan="2">0.47 / 0.47</td><td>0.000</td><td>157.575</td><td>159.027</td><td colspan="2">2025.01.08 06:25:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.09 06:01:43</td><td>9</td><td>USDJPY</td><td>sell</td><td colspan="2">0.47 / 0.47</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.09 06:01:43</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.09 06:01:43</td><td>10</td><td>USDJPY</td><td>sell</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td>158.416</td><td>157.439</td><td colspan="2">2025.01.09 06:01:43</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.09 07:05:37</td><td>11</td><td>USDJPY</td><td>buy</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.09 07:05:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.10 04:20:00</td><td>12</td><td>USDJPY</td><td>buy</td><td colspan="2">0.56 / 0.56</td><td>0.000</td><td>157.680</td><td>158.916</td><td colspan="2">2025.01.10 04:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.10 10:36:25</td><td>13</td><td>USDJPY</td><td>sell</td><td colspan="2">0.56 / 0.56</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.10 10:36:25</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.13 03:20:00</td><td>14</td><td>USDJPY</td><td>sell</td><td colspan="2">0.87 / 0.87</td><td>0.000</td><td>158.101</td><td>157.309</td><td colspan="2">2025.01.13 03:20:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.13 03:35:43</td><td>15</td><td>USDJPY</td><td>buy</td><td colspan="2">0.87 / 0.87</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.13 03:35:43</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.14 03:35:00</td><td>16</td><td>USDJPY</td><td>buy</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td>156.792</td><td>158.706</td><td colspan="2">2025.01.14 03:35:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.15 07:37:34</td><td>17</td><td>USDJPY</td><td>sell</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.15 07:37:34</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.16 03:05:00</td><td>18</td><td>USDJPY</td><td>sell</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td>156.814</td><td>155.243</td><td colspan="2">2025.01.16 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.16 03:30:39</td><td>19</td><td>USDJPY</td><td>buy</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.16 03:30:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.17 06:10:00</td><td>20</td><td>USDJPY</td><td>buy</td><td colspan="2">0.31 / 0.31</td><td>0.000</td><td>154.491</td><td>156.700</td><td colspan="2">2025.01.17 06:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.17 16:39:32</td><td>21</td><td>USDJPY</td><td>sell</td><td colspan="2">0.31 / 0.31</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.17 16:39:32</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.20 03:10:00</td><td>22</td><td>USDJPY</td><td>sell</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td>156.683</td><td>155.020</td><td colspan="2">2025.01.20 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.20 11:33:37</td><td>23</td><td>USDJPY</td><td>buy</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.20 11:33:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.21 05:15:00</td><td>24</td><td>USDJPY</td><td>sell</td><td colspan="2">0.11 / 0.11</td><td>0.000</td><td>157.456</td><td>151.604</td><td colspan="2">2025.01.21 05:15:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.22 17:27:31</td><td>25</td><td>USDJPY</td><td>buy</td><td colspan="2">0.11 / 0.11</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.22 17:27:31</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.23 03:10:00</td><td>26</td><td>USDJPY</td><td>sell</td><td colspan="2">1.07 / 1.07</td><td>0.000</td><td>156.579</td><td>155.941</td><td colspan="2">2025.01.23 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.23 03:39:04</td><td>27</td><td>USDJPY</td><td>buy</td><td colspan="2">1.07 / 1.07</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.23 03:39:04</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.24 03:40:00</td><td>28</td><td>USDJPY</td><td>buy</td><td colspan="2">0.57 / 0.57</td><td>0.000</td><td>155.751</td><td>156.939</td><td colspan="2">2025.01.24 03:40:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.24 04:43:59</td><td>29</td><td>USDJPY</td><td>sell</td><td colspan="2">0.57 / 0.57</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.24 04:43:59</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.27 03:05:00</td><td>30</td><td>USDJPY</td><td>sell</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td>156.221</td><td>154.245</td><td colspan="2">2025.01.27 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.27 05:43:29</td><td>31</td><td>USDJPY</td><td>buy</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.27 05:43:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.28 03:10:00</td><td>32</td><td>USDJPY</td><td>buy</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td>154.533</td><td>156.095</td><td colspan="2">2025.01.28 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.28 05:23:17</td><td>33</td><td>USDJPY</td><td>sell</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.28 05:23:17</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.29 03:05:00</td><td>34</td><td>USDJPY</td><td>buy</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td>155.247</td><td>156.211</td><td colspan="2">2025.01.29 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.29 05:27:35</td><td>35</td><td>USDJPY</td><td>sell</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.29 05:27:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.30 03:05:00</td><td>36</td><td>USDJPY</td><td>sell</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td>155.596</td><td>153.326</td><td colspan="2">2025.01.30 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.30 15:55:26</td><td>37</td><td>USDJPY</td><td>buy</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.30 15:55:26</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.31 03:35:00</td><td>38</td><td>USDJPY</td><td>sell</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td>154.670</td><td>153.156</td><td colspan="2">2025.01.31 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.31 05:49:05</td><td>39</td><td>USDJPY</td><td>buy</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td></td><td></td><td colspan="2">2025.01.31 05:49:05</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.03 03:05:00</td><td>40</td><td>USDJPY</td><td>buy</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td>154.967</td><td>156.934</td><td colspan="2">2025.02.03 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.03 08:21:42</td><td>41</td><td>USDJPY</td><td>sell</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.03 08:21:42</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.04 03:50:00</td><td>42</td><td>USDJPY</td><td>sell</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td>155.594</td><td>154.652</td><td colspan="2">2025.02.04 03:50:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.04 07:06:38</td><td>43</td><td>USDJPY</td><td>buy</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.04 07:06:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.05 03:05:00</td><td>44</td><td>USDJPY</td><td>sell</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td>154.721</td><td>152.424</td><td colspan="2">2025.02.05 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.05 10:43:35</td><td>45</td><td>USDJPY</td><td>buy</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.05 10:43:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.06 03:05:00</td><td>46</td><td>USDJPY</td><td>sell</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td>153.033</td><td>151.445</td><td colspan="2">2025.02.06 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.06 03:39:37</td><td>47</td><td>USDJPY</td><td>buy</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.06 03:39:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.07 03:05:00</td><td>48</td><td>USDJPY</td><td>buy</td><td colspan="2">0.49 / 0.49</td><td>0.000</td><td>150.751</td><td>152.106</td><td colspan="2">2025.02.07 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.07 07:46:24</td><td>49</td><td>USDJPY</td><td>sell</td><td colspan="2">0.49 / 0.49</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.07 07:46:24</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.10 03:05:00</td><td>50</td><td>USDJPY</td><td>buy</td><td colspan="2">0.51 / 0.51</td><td>0.000</td><td>151.399</td><td>152.684</td><td colspan="2">2025.02.10 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.10 10:15:35</td><td>51</td><td>USDJPY</td><td>sell</td><td colspan="2">0.51 / 0.51</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.10 10:15:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.11 03:20:00</td><td>52</td><td>USDJPY</td><td>buy</td><td colspan="2">0.75 / 0.75</td><td>0.000</td><td>151.494</td><td>152.383</td><td colspan="2">2025.02.11 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.11 10:31:28</td><td>53</td><td>USDJPY</td><td>sell</td><td colspan="2">0.75 / 0.75</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.11 10:31:28</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.12 03:15:00</td><td>54</td><td>USDJPY</td><td>buy</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td>152.315</td><td>154.489</td><td colspan="2">2025.02.12 03:15:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.12 15:30:00</td><td>55</td><td>USDJPY</td><td>sell</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.12 15:30:00</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.13 03:05:00</td><td>56</td><td>USDJPY</td><td>buy</td><td colspan="2">0.35 / 0.35</td><td>0.000</td><td>153.780</td><td>155.676</td><td colspan="2">2025.02.13 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.13 04:28:34</td><td>57</td><td>USDJPY</td><td>sell</td><td colspan="2">0.35 / 0.35</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.13 04:28:34</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.14 03:05:00</td><td>58</td><td>USDJPY</td><td>sell</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td>153.573</td><td>151.267</td><td colspan="2">2025.02.14 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.17 02:38:33</td><td>59</td><td>USDJPY</td><td>buy</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.17 02:38:33</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.17 03:10:00</td><td>60</td><td>USDJPY</td><td>sell</td><td colspan="2">0.45 / 0.45</td><td>0.000</td><td>152.430</td><td>150.969</td><td colspan="2">2025.02.17 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.17 17:56:33</td><td>61</td><td>USDJPY</td><td>buy</td><td colspan="2">0.45 / 0.45</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.17 17:56:33</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.18 03:20:00</td><td>62</td><td>USDJPY</td><td>buy</td><td colspan="2">0.5 / 0.5</td><td>0.000</td><td>151.167</td><td>152.478</td><td colspan="2">2025.02.18 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.18 06:00:56</td><td>63</td><td>USDJPY</td><td>sell</td><td colspan="2">0.5 / 0.5</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.18 06:00:56</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.19 03:35:00</td><td>64</td><td>USDJPY</td><td>sell</td><td colspan="2">0.55 / 0.55</td><td>0.000</td><td>152.308</td><td>151.111</td><td colspan="2">2025.02.19 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.19 03:51:32</td><td>65</td><td>USDJPY</td><td>buy</td><td colspan="2">0.55 / 0.55</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.19 03:51:32</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.20 03:10:00</td><td>66</td><td>USDJPY</td><td>sell</td><td colspan="2">0.38 / 0.38</td><td>0.000</td><td>151.574</td><td>149.836</td><td colspan="2">2025.02.20 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.20 06:21:01</td><td>67</td><td>USDJPY</td><td>buy</td><td colspan="2">0.38 / 0.38</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.20 06:21:01</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.21 03:05:00</td><td>68</td><td>USDJPY</td><td>buy</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td>149.102</td><td>151.029</td><td colspan="2">2025.02.21 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.21 04:29:28</td><td>69</td><td>USDJPY</td><td>sell</td><td colspan="2">0.34 / 0.34</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.21 04:29:28</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.24 04:15:00</td><td>70</td><td>USDJPY</td><td>buy</td><td colspan="2">0.26 / 0.26</td><td>0.000</td><td>148.301</td><td>150.769</td><td colspan="2">2025.02.24 04:15:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.25 02:33:41</td><td>71</td><td>USDJPY</td><td>sell</td><td colspan="2">0.26 / 0.26</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.25 02:33:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.25 03:05:00</td><td>72</td><td>USDJPY</td><td>buy</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td>149.675</td><td>150.876</td><td colspan="2">2025.02.25 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.25 04:32:30</td><td>73</td><td>USDJPY</td><td>sell</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.25 04:32:30</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.26 03:45:00</td><td>74</td><td>USDJPY</td><td>buy</td><td colspan="2">0.31 / 0.31</td><td>0.000</td><td>148.195</td><td>150.263</td><td colspan="2">2025.02.26 03:45:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.26 16:52:03</td><td>75</td><td>USDJPY</td><td>sell</td><td colspan="2">0.31 / 0.31</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.26 16:52:03</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.27 03:25:00</td><td>76</td><td>USDJPY</td><td>buy</td><td colspan="2">0.38 / 0.38</td><td>0.000</td><td>148.406</td><td>150.140</td><td colspan="2">2025.02.27 03:25:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.27 10:38:39</td><td>77</td><td>USDJPY</td><td>sell</td><td colspan="2">0.38 / 0.38</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.27 10:38:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.28 03:05:00</td><td>78</td><td>USDJPY</td><td>sell</td><td colspan="2">0.18 / 0.18</td><td>0.000</td><td>150.875</td><td>147.390</td><td colspan="2">2025.02.28 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.28 09:42:19</td><td>79</td><td>USDJPY</td><td>buy</td><td colspan="2">0.18 / 0.18</td><td>0.000</td><td></td><td></td><td colspan="2">2025.02.28 09:42:19</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.03 03:40:00</td><td>80</td><td>USDJPY</td><td>sell</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td>151.345</td><td>149.352</td><td colspan="2">2025.03.03 03:40:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.03 13:01:38</td><td>81</td><td>USDJPY</td><td>buy</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.03 13:01:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.04 03:15:00</td><td>82</td><td>USDJPY</td><td>sell</td><td colspan="2">0.27 / 0.27</td><td>0.000</td><td>149.909</td><td>147.515</td><td colspan="2">2025.03.04 03:15:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.04 04:53:45</td><td>83</td><td>USDJPY</td><td>buy</td><td colspan="2">0.27 / 0.27</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.04 04:53:45</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.05 03:10:00</td><td>84</td><td>USDJPY</td><td>buy</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td>149.247</td><td>150.761</td><td colspan="2">2025.03.05 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.05 08:29:38</td><td>85</td><td>USDJPY</td><td>sell</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.05 08:29:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.07 04:55:00</td><td>86</td><td>USDJPY</td><td>sell</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td>148.616</td><td>146.398</td><td colspan="2">2025.03.07 04:55:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.07 16:31:30</td><td>87</td><td>USDJPY</td><td>buy</td><td colspan="2">0.29 / 0.29</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.07 16:31:30</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.10 03:25:00</td><td>88</td><td>USDJPY</td><td>sell</td><td colspan="2">0.35 / 0.35</td><td>0.000</td><td>147.932</td><td>146.102</td><td colspan="2">2025.03.10 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.10 04:29:45</td><td>89</td><td>USDJPY</td><td>buy</td><td colspan="2">0.35 / 0.35</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.10 04:29:45</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.11 04:20:00</td><td>90</td><td>USDJPY</td><td>buy</td><td colspan="2">0.26 / 0.26</td><td>0.000</td><td>146.054</td><td>148.500</td><td colspan="2">2025.03.11 04:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.11 14:57:34</td><td>91</td><td>USDJPY</td><td>sell</td><td colspan="2">0.26 / 0.26</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.11 14:57:34</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.12 03:10:00</td><td>92</td><td>USDJPY</td><td>sell</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td>148.338</td><td>147.427</td><td colspan="2">2025.03.12 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.12 06:02:39</td><td>93</td><td>USDJPY</td><td>buy</td><td colspan="2">0.71 / 0.71</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.12 06:02:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.13 05:50:00</td><td>94</td><td>USDJPY</td><td>sell</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td>148.625</td><td>147.428</td><td colspan="2">2025.03.13 05:50:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.13 07:38:02</td><td>95</td><td>USDJPY</td><td>buy</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.13 07:38:02</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.14 03:25:00</td><td>96</td><td>USDJPY</td><td>buy</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td>147.424</td><td>149.527</td><td colspan="2">2025.03.14 03:25:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.14 09:25:25</td><td>97</td><td>USDJPY</td><td>sell</td><td colspan="2">0.3 / 0.3</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.14 09:25:25</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.17 06:10:00</td><td>98</td><td>USDJPY</td><td>buy</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td>148.133</td><td>149.946</td><td colspan="2">2025.03.17 06:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.17 12:25:20</td><td>99</td><td>USDJPY</td><td>sell</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.17 12:25:20</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.18 03:50:00</td><td>100</td><td>USDJPY</td><td>buy</td><td colspan="2">0.65 / 0.65</td><td>0.000</td><td>149.058</td><td>150.061</td><td colspan="2">2025.03.18 03:50:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.18 08:20:14</td><td>101</td><td>USDJPY</td><td>sell</td><td colspan="2">0.65 / 0.65</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.18 08:20:14</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.19 04:35:00</td><td>102</td><td>USDJPY</td><td>sell</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td>149.980</td><td>148.462</td><td colspan="2">2025.03.19 04:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.19 07:12:38</td><td>103</td><td>USDJPY</td><td>buy</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.19 07:12:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.20 03:35:00</td><td>104</td><td>USDJPY</td><td>sell</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td>148.724</td><td>147.659</td><td colspan="2">2025.03.20 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.20 09:23:02</td><td>105</td><td>USDJPY</td><td>buy</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.20 09:23:02</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.21 03:10:00</td><td>106</td><td>USDJPY</td><td>buy</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td>148.208</td><td>150.135</td><td colspan="2">2025.03.21 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.21 07:35:38</td><td>107</td><td>USDJPY</td><td>sell</td><td colspan="2">0.33 / 0.33</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.21 07:35:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.24 03:05:00</td><td>108</td><td>USDJPY</td><td>buy</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td>149.144</td><td>150.570</td><td colspan="2">2025.03.24 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.24 15:58:19</td><td>109</td><td>USDJPY</td><td>sell</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.24 15:58:19</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.25 03:10:00</td><td>110</td><td>USDJPY</td><td>sell</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td>151.098</td><td>150.363</td><td colspan="2">2025.03.25 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.25 06:19:21</td><td>111</td><td>USDJPY</td><td>buy</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.25 06:19:21</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.26 03:20:00</td><td>112</td><td>USDJPY</td><td>buy</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td>149.484</td><td>151.037</td><td colspan="2">2025.03.26 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.26 17:07:33</td><td>113</td><td>USDJPY</td><td>sell</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.26 17:07:33</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.27 03:05:00</td><td>114</td><td>USDJPY</td><td>sell</td><td colspan="2">0.66 / 0.66</td><td>0.000</td><td>150.805</td><td>149.806</td><td colspan="2">2025.03.27 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.27 06:20:29</td><td>115</td><td>USDJPY</td><td>buy</td><td colspan="2">0.66 / 0.66</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.27 06:20:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.28 03:35:00</td><td>116</td><td>USDJPY</td><td>sell</td><td colspan="2">0.39 / 0.39</td><td>0.000</td><td>151.552</td><td>149.889</td><td colspan="2">2025.03.28 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.28 16:02:39</td><td>117</td><td>USDJPY</td><td>buy</td><td colspan="2">0.39 / 0.39</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.28 16:02:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.31 03:15:00</td><td>118</td><td>USDJPY</td><td>sell</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td>149.855</td><td>148.443</td><td colspan="2">2025.03.31 03:15:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.31 05:29:35</td><td>119</td><td>USDJPY</td><td>buy</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td></td><td></td><td colspan="2">2025.03.31 05:29:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.01 03:05:00</td><td>120</td><td>USDJPY</td><td>sell</td><td colspan="2">0.57 / 0.57</td><td>0.000</td><td>150.332</td><td>149.184</td><td colspan="2">2025.04.01 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.01 13:10:40</td><td>121</td><td>USDJPY</td><td>buy</td><td colspan="2">0.57 / 0.57</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.01 13:10:40</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.02 03:05:00</td><td>122</td><td>USDJPY</td><td>sell</td><td colspan="2">1.19 / 1.19</td><td>0.000</td><td>149.976</td><td>149.426</td><td colspan="2">2025.04.02 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.02 03:15:29</td><td>123</td><td>USDJPY</td><td>buy</td><td colspan="2">1.19 / 1.19</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.02 03:15:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.03 04:40:00</td><td>124</td><td>USDJPY</td><td>sell</td><td colspan="2">0.2 / 0.2</td><td>0.000</td><td>149.111</td><td>145.895</td><td colspan="2">2025.04.03 04:40:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.03 11:50:16</td><td>125</td><td>USDJPY</td><td>buy</td><td colspan="2">0.2 / 0.2</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.03 11:50:16</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.04 03:05:00</td><td>126</td><td>USDJPY</td><td>buy</td><td colspan="2">0.22 / 0.22</td><td>0.000</td><td>145.050</td><td>147.875</td><td colspan="2">2025.04.04 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.04 06:42:41</td><td>127</td><td>USDJPY</td><td>sell</td><td colspan="2">0.22 / 0.22</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.04 06:42:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.07 03:10:00</td><td>128</td><td>USDJPY</td><td>buy</td><td colspan="2">0.23 / 0.23</td><td>0.000</td><td>144.215</td><td>146.974</td><td colspan="2">2025.04.07 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.07 04:20:41</td><td>129</td><td>USDJPY</td><td>sell</td><td colspan="2">0.23 / 0.23</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.07 04:20:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.08 03:25:00</td><td>130</td><td>USDJPY</td><td>sell</td><td colspan="2">0.37 / 0.37</td><td>0.000</td><td>148.444</td><td>146.750</td><td colspan="2">2025.04.08 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.08 10:00:15</td><td>131</td><td>USDJPY</td><td>buy</td><td colspan="2">0.37 / 0.37</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.08 10:00:15</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.09 03:20:00</td><td>132</td><td>USDJPY</td><td>sell</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td>146.352</td><td>144.574</td><td colspan="2">2025.04.09 03:20:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.09 07:08:27</td><td>133</td><td>USDJPY</td><td>buy</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.09 07:08:27</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.10 03:10:00</td><td>134</td><td>USDJPY</td><td>sell</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td>147.940</td><td>146.426</td><td colspan="2">2025.04.10 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.10 03:38:41</td><td>135</td><td>USDJPY</td><td>buy</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.10 03:38:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.11 03:05:00</td><td>136</td><td>USDJPY</td><td>sell</td><td colspan="2">0.28 / 0.28</td><td>0.000</td><td>144.603</td><td>142.302</td><td colspan="2">2025.04.11 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.11 03:32:36</td><td>137</td><td>USDJPY</td><td>buy</td><td colspan="2">0.28 / 0.28</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.11 03:32:36</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.14 03:05:00</td><td>138</td><td>USDJPY</td><td>sell</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td>144.112</td><td>142.700</td><td colspan="2">2025.04.14 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.14 03:55:40</td><td>139</td><td>USDJPY</td><td>buy</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.14 03:55:40</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.15 03:15:00</td><td>140</td><td>USDJPY</td><td>buy</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td>142.683</td><td>144.122</td><td colspan="2">2025.04.15 03:15:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.15 07:35:13</td><td>141</td><td>USDJPY</td><td>sell</td><td colspan="2">0.43 / 0.43</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.15 07:35:13</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.16 03:05:00</td><td>142</td><td>USDJPY</td><td>sell</td><td colspan="2">0.6 / 0.6</td><td>0.000</td><td>143.479</td><td>142.436</td><td colspan="2">2025.04.16 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.16 04:40:27</td><td>143</td><td>USDJPY</td><td>buy</td><td colspan="2">0.6 / 0.6</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.16 04:40:27</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.17 03:05:00</td><td>144</td><td>USDJPY</td><td>buy</td><td colspan="2">0.4 / 0.4</td><td>0.000</td><td>141.741</td><td>143.294</td><td colspan="2">2025.04.17 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.17 10:23:41</td><td>145</td><td>USDJPY</td><td>sell</td><td colspan="2">0.4 / 0.4</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.17 10:23:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.18 03:10:00</td><td>146</td><td>USDJPY</td><td>sell</td><td colspan="2">0.91 / 0.91</td><td>0.000</td><td>142.516</td><td>141.830</td><td colspan="2">2025.04.18 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.18 03:53:38</td><td>147</td><td>USDJPY</td><td>buy</td><td colspan="2">0.91 / 0.91</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.18 03:53:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.21 03:05:00</td><td>148</td><td>USDJPY</td><td>sell</td><td colspan="2">0.53 / 0.53</td><td>0.000</td><td>141.974</td><td>140.795</td><td colspan="2">2025.04.21 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.21 04:06:36</td><td>149</td><td>USDJPY</td><td>buy</td><td colspan="2">0.53 / 0.53</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.21 04:06:36</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.22 03:05:00</td><td>150</td><td>USDJPY</td><td>buy</td><td colspan="2">0.53 / 0.53</td><td>0.000</td><td>140.437</td><td>141.590</td><td colspan="2">2025.04.22 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.22 05:18:27</td><td>151</td><td>USDJPY</td><td>sell</td><td colspan="2">0.53 / 0.53</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.22 05:18:27</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.23 03:05:00</td><td>152</td><td>USDJPY</td><td>sell</td><td colspan="2">0.25 / 0.25</td><td>0.000</td><td>143.641</td><td>141.225</td><td colspan="2">2025.04.23 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.23 04:39:38</td><td>153</td><td>USDJPY</td><td>buy</td><td colspan="2">0.25 / 0.25</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.23 04:39:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.24 03:10:00</td><td>154</td><td>USDJPY</td><td>buy</td><td colspan="2">0.62 / 0.62</td><td>0.000</td><td>142.827</td><td>143.826</td><td colspan="2">2025.04.24 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.24 03:53:13</td><td>155</td><td>USDJPY</td><td>sell</td><td colspan="2">0.62 / 0.62</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.24 03:53:13</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.25 03:05:00</td><td>156</td><td>USDJPY</td><td>buy</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td>142.485</td><td>143.501</td><td colspan="2">2025.04.25 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.25 06:32:00</td><td>157</td><td>USDJPY</td><td>sell</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.25 06:32:00</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.28 03:05:00</td><td>158</td><td>USDJPY</td><td>sell</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td>143.989</td><td>143.285</td><td colspan="2">2025.04.28 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.28 04:00:25</td><td>159</td><td>USDJPY</td><td>buy</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.28 04:00:25</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.29 03:15:00</td><td>160</td><td>USDJPY</td><td>sell</td><td colspan="2">0.6 / 0.6</td><td>0.000</td><td>142.543</td><td>141.500</td><td colspan="2">2025.04.29 03:15:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.29 04:38:36</td><td>161</td><td>USDJPY</td><td>buy</td><td colspan="2">0.6 / 0.6</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.29 04:38:36</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.30 03:50:00</td><td>162</td><td>USDJPY</td><td>buy</td><td colspan="2">0.86 / 0.86</td><td>0.000</td><td>141.988</td><td>142.710</td><td colspan="2">2025.04.30 03:50:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.30 05:01:37</td><td>163</td><td>USDJPY</td><td>sell</td><td colspan="2">0.86 / 0.86</td><td>0.000</td><td></td><td></td><td colspan="2">2025.04.30 05:01:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.01 03:20:00</td><td>164</td><td>USDJPY</td><td>sell</td><td colspan="2">1.22 / 1.22</td><td>0.000</td><td>143.161</td><td>142.651</td><td colspan="2">2025.05.01 03:20:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.01 04:03:59</td><td>165</td><td>USDJPY</td><td>buy</td><td colspan="2">1.22 / 1.22</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.01 04:03:59</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.02 03:20:00</td><td>166</td><td>USDJPY</td><td>buy</td><td colspan="2">0.51 / 0.51</td><td>0.000</td><td>145.111</td><td>146.330</td><td colspan="2">2025.05.02 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.02 05:00:35</td><td>167</td><td>USDJPY</td><td>sell</td><td colspan="2">0.51 / 0.51</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.02 05:00:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.05 04:10:00</td><td>168</td><td>USDJPY</td><td>sell</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td>145.152</td><td>143.612</td><td colspan="2">2025.05.05 04:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.05 08:14:39</td><td>169</td><td>USDJPY</td><td>buy</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.05 08:14:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.06 03:20:00</td><td>170</td><td>USDJPY</td><td>buy</td><td colspan="2">0.58 / 0.58</td><td>0.000</td><td>143.373</td><td>144.460</td><td colspan="2">2025.05.06 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.06 04:21:33</td><td>171</td><td>USDJPY</td><td>sell</td><td colspan="2">0.58 / 0.58</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.06 04:21:33</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.07 03:05:00</td><td>172</td><td>USDJPY</td><td>sell</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td>143.533</td><td>142.178</td><td colspan="2">2025.05.07 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.07 03:23:30</td><td>173</td><td>USDJPY</td><td>buy</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.07 03:23:30</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.08 03:10:00</td><td>174</td><td>USDJPY</td><td>buy</td><td colspan="2">0.93 / 0.93</td><td>0.000</td><td>143.589</td><td>144.262</td><td colspan="2">2025.05.08 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.08 03:12:55</td><td>175</td><td>USDJPY</td><td>sell</td><td colspan="2">0.93 / 0.93</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.08 03:12:55</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.09 03:25:00</td><td>176</td><td>USDJPY</td><td>buy</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td>145.588</td><td>146.741</td><td colspan="2">2025.05.09 03:25:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.09 03:46:39</td><td>177</td><td>USDJPY</td><td>sell</td><td colspan="2">0.54 / 0.54</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.09 03:46:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.12 03:25:00</td><td>178</td><td>USDJPY</td><td>buy</td><td colspan="2">0.67 / 0.67</td><td>0.000</td><td>145.501</td><td>146.451</td><td colspan="2">2025.05.12 03:25:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.12 04:14:41</td><td>179</td><td>USDJPY</td><td>sell</td><td colspan="2">0.67 / 0.67</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.12 04:14:41</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.13 03:05:00</td><td>180</td><td>USDJPY</td><td>sell</td><td colspan="2">0.56 / 0.56</td><td>0.000</td><td>148.659</td><td>147.511</td><td colspan="2">2025.05.13 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.13 03:58:29</td><td>181</td><td>USDJPY</td><td>buy</td><td colspan="2">0.56 / 0.56</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.13 03:58:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.14 03:05:00</td><td>182</td><td>USDJPY</td><td>buy</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td>147.172</td><td>148.065</td><td colspan="2">2025.05.14 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.14 03:53:00</td><td>183</td><td>USDJPY</td><td>sell</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.14 03:53:00</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.15 03:05:00</td><td>184</td><td>USDJPY</td><td>buy</td><td colspan="2">0.62 / 0.62</td><td>0.000</td><td>146.226</td><td>147.264</td><td colspan="2">2025.05.15 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.15 03:31:26</td><td>185</td><td>USDJPY</td><td>sell</td><td colspan="2">0.62 / 0.62</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.15 03:31:26</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.16 03:05:00</td><td>186</td><td>USDJPY</td><td>sell</td><td colspan="2">0.58 / 0.58</td><td>0.000</td><td>145.761</td><td>144.652</td><td colspan="2">2025.05.16 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.16 10:09:40</td><td>187</td><td>USDJPY</td><td>buy</td><td colspan="2">0.58 / 0.58</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.16 10:09:40</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.19 03:35:00</td><td>188</td><td>USDJPY</td><td>sell</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td>145.762</td><td>144.336</td><td colspan="2">2025.05.19 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.19 10:34:39</td><td>189</td><td>USDJPY</td><td>buy</td><td colspan="2">0.44 / 0.44</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.19 10:34:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.20 03:05:00</td><td>190</td><td>USDJPY</td><td>buy</td><td colspan="2">0.87 / 0.87</td><td>0.000</td><td>144.721</td><td>145.447</td><td colspan="2">2025.05.20 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.20 03:19:27</td><td>191</td><td>USDJPY</td><td>sell</td><td colspan="2">0.87 / 0.87</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.20 03:19:27</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.21 03:05:00</td><td>192</td><td>USDJPY</td><td>sell</td><td colspan="2">1 / 1</td><td>0.000</td><td>144.526</td><td>143.888</td><td colspan="2">2025.05.21 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.21 04:01:29</td><td>193</td><td>USDJPY</td><td>buy</td><td colspan="2">1 / 1</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.21 04:01:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.22 03:10:00</td><td>194</td><td>USDJPY</td><td>sell</td><td colspan="2">0.28 / 0.28</td><td>0.000</td><td>144.614</td><td>142.418</td><td colspan="2">2025.05.22 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.22 11:05:30</td><td>195</td><td>USDJPY</td><td>buy</td><td colspan="2">0.28 / 0.28</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.22 11:05:30</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.23 03:05:00</td><td>196</td><td>USDJPY</td><td>buy</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td>143.646</td><td>144.350</td><td colspan="2">2025.05.23 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.23 03:15:05</td><td>197</td><td>USDJPY</td><td>sell</td><td colspan="2">0.89 / 0.89</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.23 03:15:05</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.26 03:25:00</td><td>198</td><td>USDJPY</td><td>sell</td><td colspan="2">0.78 / 0.78</td><td>0.000</td><td>143.086</td><td>142.276</td><td colspan="2">2025.05.26 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.26 04:17:43</td><td>199</td><td>USDJPY</td><td>buy</td><td colspan="2">0.78 / 0.78</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.26 04:17:43</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.27 03:05:00</td><td>200</td><td>USDJPY</td><td>sell</td><td colspan="2">1.09 / 1.09</td><td>0.000</td><td>142.780</td><td>142.208</td><td colspan="2">2025.05.27 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.27 03:10:37</td><td>201</td><td>USDJPY</td><td>buy</td><td colspan="2">1.09 / 1.09</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.27 03:10:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.28 03:05:00</td><td>202</td><td>USDJPY</td><td>sell</td><td colspan="2">0.79 / 0.79</td><td>0.000</td><td>144.416</td><td>143.633</td><td colspan="2">2025.05.28 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.28 04:05:19</td><td>203</td><td>USDJPY</td><td>buy</td><td colspan="2">0.79 / 0.79</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.28 04:05:19</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.29 03:50:00</td><td>204</td><td>USDJPY</td><td>buy</td><td colspan="2">0.12 / 0.12</td><td>0.000</td><td>143.772</td><td>148.753</td><td colspan="2">2025.05.29 03:50:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.29 15:05:15</td><td>205</td><td>USDJPY</td><td>sell</td><td colspan="2">0.12 / 0.12</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.29 15:05:15</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.30 03:05:00</td><td>206</td><td>USDJPY</td><td>sell</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td>144.364</td><td>142.824</td><td colspan="2">2025.05.30 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.30 03:52:37</td><td>207</td><td>USDJPY</td><td>buy</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td></td><td></td><td colspan="2">2025.05.30 03:52:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.02 03:05:00</td><td>208</td><td>USDJPY</td><td>sell</td><td colspan="2">1.02 / 1.02</td><td>0.000</td><td>143.957</td><td>143.337</td><td colspan="2">2025.06.02 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.02 04:05:35</td><td>209</td><td>USDJPY</td><td>buy</td><td colspan="2">1.02 / 1.02</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.02 04:05:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.03 03:05:00</td><td>210</td><td>USDJPY</td><td>buy</td><td colspan="2">0.68 / 0.68</td><td>0.000</td><td>142.177</td><td>143.101</td><td colspan="2">2025.06.03 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.03 04:11:35</td><td>211</td><td>USDJPY</td><td>sell</td><td colspan="2">0.68 / 0.68</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.03 04:11:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.04 04:05:00</td><td>212</td><td>USDJPY</td><td>buy</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td>143.587</td><td>144.612</td><td colspan="2">2025.06.04 04:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.04 04:20:39</td><td>213</td><td>USDJPY</td><td>sell</td><td colspan="2">0.61 / 0.61</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.04 04:20:39</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.05 04:35:00</td><td>214</td><td>USDJPY</td><td>buy</td><td colspan="2">0.47 / 0.47</td><td>0.000</td><td>142.310</td><td>143.634</td><td colspan="2">2025.06.05 04:35:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.05 10:47:35</td><td>215</td><td>USDJPY</td><td>sell</td><td colspan="2">0.47 / 0.47</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.05 10:47:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.06 03:10:00</td><td>216</td><td>USDJPY</td><td>buy</td><td colspan="2">1.03 / 1.03</td><td>0.000</td><td>143.358</td><td>143.965</td><td colspan="2">2025.06.06 03:10:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.06 05:20:04</td><td>217</td><td>USDJPY</td><td>sell</td><td colspan="2">1.03 / 1.03</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.06 05:20:04</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.09 03:20:00</td><td>218</td><td>USDJPY</td><td>buy</td><td colspan="2">0.97 / 0.97</td><td>0.000</td><td>144.459</td><td>145.106</td><td colspan="2">2025.06.09 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.09 04:23:36</td><td>219</td><td>USDJPY</td><td>sell</td><td colspan="2">0.97 / 0.97</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.09 04:23:36</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.10 03:15:00</td><td>220</td><td>USDJPY</td><td>sell</td><td colspan="2">0.95 / 0.95</td><td>0.000</td><td>144.765</td><td>144.101</td><td colspan="2">2025.06.10 03:15:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.10 03:54:29</td><td>221</td><td>USDJPY</td><td>buy</td><td colspan="2">0.95 / 0.95</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.10 03:54:29</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.11 03:25:00</td><td>222</td><td>USDJPY</td><td>sell</td><td colspan="2">0.39 / 0.39</td><td>0.000</td><td>145.439</td><td>143.833</td><td colspan="2">2025.06.11 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.11 05:02:25</td><td>223</td><td>USDJPY</td><td>buy</td><td colspan="2">0.39 / 0.39</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.11 05:02:25</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.12 03:30:00</td><td>224</td><td>USDJPY</td><td>sell</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td>144.502</td><td>143.618</td><td colspan="2">2025.06.12 03:30:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.12 04:16:36</td><td>225</td><td>USDJPY</td><td>buy</td><td colspan="2">0.72 / 0.72</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.12 04:16:36</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.13 03:05:00</td><td>226</td><td>USDJPY</td><td>sell</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td>143.698</td><td>141.969</td><td colspan="2">2025.06.13 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.13 06:14:27</td><td>227</td><td>USDJPY</td><td>buy</td><td colspan="2">0.36 / 0.36</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.13 06:14:27</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.16 03:25:00</td><td>228</td><td>USDJPY</td><td>sell</td><td colspan="2">0.48 / 0.48</td><td>0.000</td><td>145.038</td><td>143.727</td><td colspan="2">2025.06.16 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.16 08:26:13</td><td>229</td><td>USDJPY</td><td>buy</td><td colspan="2">0.48 / 0.48</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.16 08:26:13</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.17 03:05:00</td><td>230</td><td>USDJPY</td><td>buy</td><td colspan="2">0.75 / 0.75</td><td>0.000</td><td>144.441</td><td>145.277</td><td colspan="2">2025.06.17 03:05:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.17 03:55:37</td><td>231</td><td>USDJPY</td><td>sell</td><td colspan="2">0.75 / 0.75</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.17 03:55:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.18 03:25:00</td><td>232</td><td>USDJPY</td><td>sell</td><td colspan="2">1.25 / 1.25</td><td>0.000</td><td>145.534</td><td>145.024</td><td colspan="2">2025.06.18 03:25:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.18 04:59:38</td><td>233</td><td>USDJPY</td><td>buy</td><td colspan="2">1.25 / 1.25</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.18 04:59:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.19 03:10:00</td><td>234</td><td>USDJPY</td><td>sell</td><td colspan="2">0.94 / 0.94</td><td>0.000</td><td>145.194</td><td>144.521</td><td colspan="2">2025.06.19 03:10:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.19 04:30:37</td><td>235</td><td>USDJPY</td><td>buy</td><td colspan="2">0.94 / 0.94</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.19 04:30:37</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.20 03:05:00</td><td>236</td><td>USDJPY</td><td>sell</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td>145.759</td><td>144.386</td><td colspan="2">2025.06.20 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.20 08:27:35</td><td>237</td><td>USDJPY</td><td>buy</td><td colspan="2">0.46 / 0.46</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.20 08:27:35</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.23 03:20:00</td><td>238</td><td>USDJPY</td><td>buy</td><td colspan="2">0.67 / 0.67</td><td>0.000</td><td>146.002</td><td>146.952</td><td colspan="2">2025.06.23 03:20:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.23 04:29:13</td><td>239</td><td>USDJPY</td><td>sell</td><td colspan="2">0.67 / 0.67</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.23 04:29:13</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.24 03:35:00</td><td>240</td><td>USDJPY</td><td>sell</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td>146.362</td><td>144.840</td><td colspan="2">2025.06.24 03:35:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.24 09:00:38</td><td>241</td><td>USDJPY</td><td>buy</td><td colspan="2">0.42 / 0.42</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.24 09:00:38</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.25 03:45:00</td><td>242</td><td>USDJPY</td><td>buy</td><td colspan="2">0.8 / 0.8</td><td>0.000</td><td>144.659</td><td>145.455</td><td colspan="2">2025.06.25 03:45:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.25 04:00:15</td><td>243</td><td>USDJPY</td><td>sell</td><td colspan="2">0.8 / 0.8</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.25 04:00:15</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.26 03:05:00</td><td>244</td><td>USDJPY</td><td>sell</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td>145.535</td><td>143.991</td><td colspan="2">2025.06.26 03:05:00</td><td>filled</td><td>Sell</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.26 09:13:04</td><td>245</td><td>USDJPY</td><td>buy</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.26 09:13:04</td><td>filled</td><td></td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.27 03:35:00</td><td>246</td><td>USDJPY</td><td>buy</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td>144.048</td><td>145.579</td><td colspan="2">2025.06.27 03:35:00</td><td>filled</td><td>Buy</td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.27 04:49:38</td><td>247</td><td>USDJPY</td><td>sell</td><td colspan="2">0.41 / 0.41</td><td>0.000</td><td></td><td></td><td colspan="2">2025.06.27 04:49:38</td><td>filled</td><td></td></tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+   </tr>
+   <tr align="center">
+      <th colspan="13" style="height: 25px"><div style="font: 10pt Tahoma"><b>Deals</b></div></th>
+   </tr>
+   <tr align="center" bgcolor="#E5F0FC">
+      <td nowrap style="height: 30px"><b>Time</b></td>
+      <td nowrap><b>Deal</b></td>
+      <td nowrap><b>Symbol</b></td>
+      <td nowrap><b>Type</b></td>
+      <td nowrap><b>Direction</b></td>
+      <td nowrap><b>Volume</b></td>
+      <td nowrap><b>Price</b></td>
+      <td nowrap><b>Order</b></td>
+      <td nowrap><b>Commission</b></td>
+      <td nowrap><b>Swap</b></td>
+      <td nowrap><b>Profit</b></td>
+      <td nowrap><b>Balance</b></td>
+      <td nowrap><b>Comment</b></td>
+   </tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.01 00:00:00</td><td>1</td><td></td><td>balance</td><td></td><td></td><td></td><td></td><td>0.00</td><td>0.00</td><td>10 000.00</td><td>10 000.00</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.02 04:55:00</td><td>2</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.33</td><td>157.285</td><td>2</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 000.00</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.02 08:34:39</td><td>3</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.33</td><td>156.715</td><td>3</td><td>0.00</td><td>0.00</td><td>120.03</td><td>10 120.03</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.03 05:50:00</td><td>4</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.7</td><td>157.446</td><td>4</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 120.03</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.03 05:59:01</td><td>5</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.7</td><td>157.220</td><td>5</td><td>0.00</td><td>0.00</td><td>-100.62</td><td>10 019.41</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.07 03:10:00</td><td>6</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.32</td><td>158.244</td><td>6</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 019.41</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.07 08:08:23</td><td>7</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.32</td><td>157.750</td><td>7</td><td>0.00</td><td>0.00</td><td>-100.21</td><td>9 919.20</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.08 06:25:00</td><td>8</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.47</td><td>158.238</td><td>8</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 919.20</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.09 06:01:43</td><td>9</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.47</td><td>157.899</td><td>9</td><td>0.00</td><td>-0.09</td><td>-100.91</td><td>9 818.20</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.09 06:01:43</td><td>10</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.71</td><td>157.899</td><td>10</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 818.20</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.09 07:05:37</td><td>11</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.71</td><td>158.122</td><td>11</td><td>0.00</td><td>0.00</td><td>-100.13</td><td>9 718.07</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.10 04:20:00</td><td>12</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.56</td><td>158.245</td><td>12</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 718.07</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.10 10:36:25</td><td>13</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.56</td><td>157.955</td><td>13</td><td>0.00</td><td>0.00</td><td>-102.81</td><td>9 615.26</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.13 03:20:00</td><td>14</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.87</td><td>157.742</td><td>14</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 615.26</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.13 03:35:43</td><td>15</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.87</td><td>157.521</td><td>15</td><td>0.00</td><td>0.00</td><td>122.06</td><td>9 737.32</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.14 03:35:00</td><td>16</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.36</td><td>157.671</td><td>16</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 737.32</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.15 07:37:34</td><td>17</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.36</td><td>157.231</td><td>17</td><td>0.00</td><td>-0.02</td><td>-100.74</td><td>9 636.56</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.16 03:05:00</td><td>18</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.44</td><td>156.096</td><td>18</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 636.56</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.16 03:30:39</td><td>19</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.44</td><td>155.671</td><td>19</td><td>0.00</td><td>0.00</td><td>120.13</td><td>9 756.69</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.17 06:10:00</td><td>20</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.31</td><td>155.498</td><td>20</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 756.69</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.17 16:39:32</td><td>21</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.31</td><td>156.105</td><td>21</td><td>0.00</td><td>0.00</td><td>120.54</td><td>9 877.23</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.20 03:10:00</td><td>22</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.41</td><td>155.923</td><td>22</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 877.23</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.20 11:33:37</td><td>23</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.41</td><td>156.306</td><td>23</td><td>0.00</td><td>0.00</td><td>-100.46</td><td>9 776.77</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.21 05:15:00</td><td>24</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.11</td><td>154.800</td><td>24</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 776.77</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.22 17:27:31</td><td>25</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.11</td><td>156.222</td><td>25</td><td>0.00</td><td>-0.04</td><td>-100.13</td><td>9 676.60</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.23 03:10:00</td><td>26</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.07</td><td>156.295</td><td>26</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 676.60</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.23 03:39:04</td><td>27</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.07</td><td>156.443</td><td>27</td><td>0.00</td><td>0.00</td><td>-101.23</td><td>9 575.37</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.24 03:40:00</td><td>28</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.57</td><td>156.294</td><td>28</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 575.37</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.24 04:43:59</td><td>29</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.57</td><td>156.020</td><td>29</td><td>0.00</td><td>0.00</td><td>-100.10</td><td>9 475.27</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.27 03:05:00</td><td>30</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.34</td><td>155.316</td><td>30</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 475.27</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.27 05:43:29</td><td>31</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.34</td><td>155.776</td><td>31</td><td>0.00</td><td>0.00</td><td>-100.40</td><td>9 374.87</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.28 03:10:00</td><td>32</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.43</td><td>155.256</td><td>32</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 374.87</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.28 05:23:17</td><td>33</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.43</td><td>155.691</td><td>33</td><td>0.00</td><td>0.00</td><td>120.14</td><td>9 495.01</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.29 03:05:00</td><td>34</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.71</td><td>155.688</td><td>34</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 495.01</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.29 05:27:35</td><td>35</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.71</td><td>155.469</td><td>35</td><td>0.00</td><td>0.00</td><td>-100.01</td><td>9 395.00</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.30 03:05:00</td><td>36</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.3</td><td>154.563</td><td>36</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 395.00</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.30 15:55:26</td><td>37</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.3</td><td>153.946</td><td>37</td><td>0.00</td><td>0.00</td><td>120.24</td><td>9 515.24</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.01.31 03:35:00</td><td>38</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.44</td><td>153.979</td><td>38</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 515.24</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.01.31 05:49:05</td><td>39</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.44</td><td>154.331</td><td>39</td><td>0.00</td><td>0.00</td><td>-100.36</td><td>9 414.88</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.03 03:05:00</td><td>40</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.34</td><td>155.864</td><td>40</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 414.88</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.03 08:21:42</td><td>41</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.34</td><td>155.404</td><td>41</td><td>0.00</td><td>0.00</td><td>-100.64</td><td>9 314.24</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.04 03:50:00</td><td>42</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.72</td><td>155.166</td><td>42</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 314.24</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.04 07:06:38</td><td>43</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.72</td><td>154.904</td><td>43</td><td>0.00</td><td>0.00</td><td>121.78</td><td>9 436.02</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.05 03:05:00</td><td>44</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.29</td><td>153.674</td><td>44</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 436.02</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.05 10:43:35</td><td>45</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.29</td><td>153.040</td><td>45</td><td>0.00</td><td>0.00</td><td>120.14</td><td>9 556.16</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.06 03:05:00</td><td>46</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.42</td><td>152.311</td><td>46</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 556.16</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.06 03:39:37</td><td>47</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.42</td><td>151.871</td><td>47</td><td>0.00</td><td>0.00</td><td>121.68</td><td>9 677.84</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.07 03:05:00</td><td>48</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.49</td><td>151.371</td><td>48</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 677.84</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.07 07:46:24</td><td>49</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.49</td><td>151.743</td><td>49</td><td>0.00</td><td>0.00</td><td>120.12</td><td>9 797.96</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.10 03:05:00</td><td>50</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.51</td><td>151.987</td><td>50</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 797.96</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.10 10:15:35</td><td>51</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.51</td><td>152.348</td><td>51</td><td>0.00</td><td>0.00</td><td>120.85</td><td>9 918.81</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.11 03:20:00</td><td>52</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.75</td><td>151.902</td><td>52</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 918.81</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.11 10:31:28</td><td>53</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.75</td><td>151.698</td><td>53</td><td>0.00</td><td>0.00</td><td>-100.86</td><td>9 817.95</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.12 03:15:00</td><td>54</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.3</td><td>153.313</td><td>54</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 817.95</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.12 15:30:00</td><td>55</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.3</td><td>154.122</td><td>55</td><td>0.00</td><td>0.00</td><td>157.47</td><td>9 975.42</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.13 03:05:00</td><td>56</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.35</td><td>154.643</td><td>56</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 975.42</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.13 04:28:34</td><td>57</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.35</td><td>154.202</td><td>57</td><td>0.00</td><td>0.00</td><td>-100.10</td><td>9 875.32</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.14 03:05:00</td><td>58</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.29</td><td>152.522</td><td>58</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 875.32</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.17 02:38:33</td><td>59</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.29</td><td>151.892</td><td>59</td><td>0.00</td><td>-0.11</td><td>120.28</td><td>9 995.49</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.17 03:10:00</td><td>60</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.45</td><td>151.764</td><td>60</td><td>0.00</td><td>0.00</td><td>0.00</td><td>9 995.49</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.17 17:56:33</td><td>61</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.45</td><td>151.357</td><td>61</td><td>0.00</td><td>0.00</td><td>121.01</td><td>10 116.50</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.18 03:20:00</td><td>62</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.5</td><td>151.768</td><td>62</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 116.50</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.18 06:00:56</td><td>63</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.5</td><td>152.134</td><td>63</td><td>0.00</td><td>0.00</td><td>120.29</td><td>10 236.79</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.19 03:35:00</td><td>64</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.55</td><td>151.765</td><td>64</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 236.79</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.19 03:51:32</td><td>65</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.55</td><td>152.044</td><td>65</td><td>0.00</td><td>0.00</td><td>-100.92</td><td>10 135.87</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.20 03:10:00</td><td>66</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.38</td><td>150.784</td><td>66</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 135.87</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.20 06:21:01</td><td>67</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.38</td><td>150.309</td><td>67</td><td>0.00</td><td>0.00</td><td>120.09</td><td>10 255.96</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.21 03:05:00</td><td>68</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.34</td><td>149.981</td><td>68</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 255.96</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.21 04:29:28</td><td>69</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.34</td><td>150.515</td><td>69</td><td>0.00</td><td>0.00</td><td>120.63</td><td>10 376.59</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.24 04:15:00</td><td>70</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.26</td><td>149.428</td><td>70</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 376.59</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.25 02:33:41</td><td>71</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.26</td><td>150.121</td><td>71</td><td>0.00</td><td>-0.02</td><td>120.02</td><td>10 496.59</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.25 03:05:00</td><td>72</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.54</td><td>150.226</td><td>72</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 496.59</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.25 04:32:30</td><td>73</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.54</td><td>149.945</td><td>73</td><td>0.00</td><td>0.00</td><td>-101.20</td><td>10 395.39</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.26 03:45:00</td><td>74</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.31</td><td>149.138</td><td>74</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 395.39</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.26 16:52:03</td><td>75</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.31</td><td>149.718</td><td>75</td><td>0.00</td><td>0.00</td><td>120.09</td><td>10 515.48</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.27 03:25:00</td><td>76</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.38</td><td>149.199</td><td>76</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 515.48</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.27 10:38:39</td><td>77</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.38</td><td>149.672</td><td>77</td><td>0.00</td><td>0.00</td><td>120.09</td><td>10 635.57</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.02.28 03:05:00</td><td>78</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.18</td><td>149.291</td><td>78</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 635.57</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.02.28 09:42:19</td><td>79</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.18</td><td>150.129</td><td>79</td><td>0.00</td><td>0.00</td><td>-100.47</td><td>10 535.10</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.03 03:40:00</td><td>80</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.33</td><td>150.440</td><td>80</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 535.10</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.03 13:01:38</td><td>81</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.33</td><td>150.901</td><td>81</td><td>0.00</td><td>0.00</td><td>-100.81</td><td>10 434.29</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.04 03:15:00</td><td>82</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.27</td><td>148.827</td><td>82</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 434.29</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.04 04:53:45</td><td>83</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.27</td><td>149.381</td><td>83</td><td>0.00</td><td>0.00</td><td>-100.13</td><td>10 334.16</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.05 03:10:00</td><td>84</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.43</td><td>149.946</td><td>84</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 334.16</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.05 08:29:38</td><td>85</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.43</td><td>149.596</td><td>85</td><td>0.00</td><td>0.00</td><td>-100.60</td><td>10 233.56</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.07 04:55:00</td><td>86</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.29</td><td>147.608</td><td>86</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 233.56</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.07 16:31:30</td><td>87</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.29</td><td>146.998</td><td>87</td><td>0.00</td><td>0.00</td><td>120.34</td><td>10 353.90</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.10 03:25:00</td><td>88</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.35</td><td>147.103</td><td>88</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 353.90</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.10 04:29:45</td><td>89</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.35</td><td>147.525</td><td>89</td><td>0.00</td><td>0.00</td><td>-100.12</td><td>10 253.78</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.11 04:20:00</td><td>90</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.26</td><td>147.169</td><td>90</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 253.78</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.11 14:57:34</td><td>91</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.26</td><td>147.852</td><td>91</td><td>0.00</td><td>0.00</td><td>120.11</td><td>10 373.89</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.12 03:10:00</td><td>92</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.71</td><td>147.901</td><td>92</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 373.89</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.12 06:02:39</td><td>93</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.71</td><td>148.112</td><td>93</td><td>0.00</td><td>0.00</td><td>-101.15</td><td>10 272.74</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.13 05:50:00</td><td>94</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.54</td><td>148.080</td><td>94</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 272.74</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.13 07:38:02</td><td>95</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.54</td><td>147.750</td><td>95</td><td>0.00</td><td>0.00</td><td>120.61</td><td>10 393.35</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.14 03:25:00</td><td>96</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.3</td><td>148.384</td><td>96</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 393.35</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.14 09:25:25</td><td>97</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.3</td><td>148.983</td><td>97</td><td>0.00</td><td>0.00</td><td>120.62</td><td>10 513.97</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.17 06:10:00</td><td>98</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.36</td><td>148.963</td><td>98</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 513.97</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.17 12:25:20</td><td>99</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.36</td><td>148.550</td><td>99</td><td>0.00</td><td>0.00</td><td>-100.09</td><td>10 413.88</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.18 03:50:00</td><td>100</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.65</td><td>149.521</td><td>100</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 413.88</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.18 08:20:14</td><td>101</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.65</td><td>149.799</td><td>101</td><td>0.00</td><td>0.00</td><td>120.63</td><td>10 534.51</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.19 04:35:00</td><td>102</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.43</td><td>149.283</td><td>102</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 534.51</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.19 07:12:38</td><td>103</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.43</td><td>149.631</td><td>103</td><td>0.00</td><td>0.00</td><td>-100.01</td><td>10 434.50</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.20 03:35:00</td><td>104</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.61</td><td>148.240</td><td>104</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 434.50</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.20 09:23:02</td><td>105</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.61</td><td>148.485</td><td>105</td><td>0.00</td><td>0.00</td><td>-100.65</td><td>10 333.85</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.21 03:10:00</td><td>106</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.33</td><td>149.088</td><td>106</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 333.85</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.21 07:35:38</td><td>107</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.33</td><td>149.633</td><td>107</td><td>0.00</td><td>0.00</td><td>120.19</td><td>10 454.04</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.24 03:05:00</td><td>108</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.46</td><td>149.796</td><td>108</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 454.04</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.24 15:58:19</td><td>109</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.46</td><td>150.189</td><td>109</td><td>0.00</td><td>0.00</td><td>120.37</td><td>10 574.41</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.25 03:10:00</td><td>110</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.89</td><td>150.763</td><td>110</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 574.41</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.25 06:19:21</td><td>111</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.89</td><td>150.560</td><td>111</td><td>0.00</td><td>0.00</td><td>120.00</td><td>10 694.41</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.26 03:20:00</td><td>112</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.42</td><td>150.203</td><td>112</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 694.41</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.26 17:07:33</td><td>113</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.42</td><td>150.634</td><td>113</td><td>0.00</td><td>0.00</td><td>120.17</td><td>10 814.58</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.27 03:05:00</td><td>114</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.66</td><td>150.350</td><td>114</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 814.58</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.27 06:20:29</td><td>115</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.66</td><td>150.077</td><td>115</td><td>0.00</td><td>0.00</td><td>120.06</td><td>10 934.64</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.28 03:35:00</td><td>116</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.39</td><td>150.797</td><td>116</td><td>0.00</td><td>0.00</td><td>0.00</td><td>10 934.64</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.28 16:02:39</td><td>117</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.39</td><td>150.334</td><td>117</td><td>0.00</td><td>0.00</td><td>120.11</td><td>11 054.75</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.03.31 03:15:00</td><td>118</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.46</td><td>149.212</td><td>118</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 054.75</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.03.31 05:29:35</td><td>119</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.46</td><td>148.822</td><td>119</td><td>0.00</td><td>0.00</td><td>120.55</td><td>11 175.30</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.01 03:05:00</td><td>120</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.57</td><td>149.816</td><td>120</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 175.30</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.01 13:10:40</td><td>121</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.57</td><td>149.500</td><td>121</td><td>0.00</td><td>0.00</td><td>120.48</td><td>11 295.78</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.02 03:05:00</td><td>122</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.19</td><td>149.726</td><td>122</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 295.78</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.02 03:15:29</td><td>123</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.19</td><td>149.853</td><td>123</td><td>0.00</td><td>0.00</td><td>-100.85</td><td>11 194.93</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.03 04:40:00</td><td>124</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.2</td><td>147.649</td><td>124</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 194.93</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.03 11:50:16</td><td>125</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.2</td><td>146.766</td><td>125</td><td>0.00</td><td>0.00</td><td>120.33</td><td>11 315.26</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.04 03:05:00</td><td>126</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.22</td><td>146.347</td><td>126</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 315.26</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.04 06:42:41</td><td>127</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.22</td><td>145.683</td><td>127</td><td>0.00</td><td>0.00</td><td>-100.27</td><td>11 214.99</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.07 03:10:00</td><td>128</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.23</td><td>145.474</td><td>128</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 214.99</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.07 04:20:41</td><td>129</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.23</td><td>146.239</td><td>129</td><td>0.00</td><td>0.00</td><td>120.32</td><td>11 335.31</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.08 03:25:00</td><td>130</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.37</td><td>147.675</td><td>130</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 335.31</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.08 10:00:15</td><td>131</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.37</td><td>147.197</td><td>131</td><td>0.00</td><td>0.00</td><td>120.15</td><td>11 455.46</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.09 03:20:00</td><td>132</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.36</td><td>145.542</td><td>132</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 455.46</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.09 07:08:27</td><td>133</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.36</td><td>145.058</td><td>133</td><td>0.00</td><td>0.00</td><td>120.12</td><td>11 575.58</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.10 03:10:00</td><td>134</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.42</td><td>147.258</td><td>134</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 575.58</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.10 03:38:41</td><td>135</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.42</td><td>146.838</td><td>135</td><td>0.00</td><td>0.00</td><td>120.13</td><td>11 695.71</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.11 03:05:00</td><td>136</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.28</td><td>143.547</td><td>136</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 695.71</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.11 03:32:36</td><td>137</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.28</td><td>142.932</td><td>137</td><td>0.00</td><td>0.00</td><td>120.48</td><td>11 816.19</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.14 03:05:00</td><td>138</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.44</td><td>143.475</td><td>138</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 816.19</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.14 03:55:40</td><td>139</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.44</td><td>143.083</td><td>139</td><td>0.00</td><td>0.00</td><td>120.55</td><td>11 936.74</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.15 03:15:00</td><td>140</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.43</td><td>143.352</td><td>140</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 936.74</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.15 07:35:13</td><td>141</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.43</td><td>143.017</td><td>141</td><td>0.00</td><td>0.00</td><td>-100.72</td><td>11 836.02</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.16 03:05:00</td><td>142</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.6</td><td>143.006</td><td>142</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 836.02</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.16 04:40:27</td><td>143</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.6</td><td>142.720</td><td>143</td><td>0.00</td><td>0.00</td><td>120.24</td><td>11 956.26</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.17 03:05:00</td><td>144</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.4</td><td>142.455</td><td>144</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 956.26</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.17 10:23:41</td><td>145</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.4</td><td>142.884</td><td>145</td><td>0.00</td><td>0.00</td><td>120.10</td><td>12 076.36</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.18 03:10:00</td><td>146</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.91</td><td>142.204</td><td>146</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 076.36</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.18 03:53:38</td><td>147</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.91</td><td>142.364</td><td>147</td><td>0.00</td><td>0.00</td><td>-102.27</td><td>11 974.09</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.21 03:05:00</td><td>148</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.53</td><td>141.438</td><td>148</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 974.09</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.21 04:06:36</td><td>149</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.53</td><td>141.117</td><td>149</td><td>0.00</td><td>0.00</td><td>120.56</td><td>12 094.65</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.22 03:05:00</td><td>150</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.53</td><td>140.975</td><td>150</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 094.65</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.22 05:18:27</td><td>151</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.53</td><td>140.707</td><td>151</td><td>0.00</td><td>0.00</td><td>-100.95</td><td>11 993.70</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.23 03:05:00</td><td>152</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.25</td><td>142.541</td><td>152</td><td>0.00</td><td>0.00</td><td>0.00</td><td>11 993.70</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.23 04:39:38</td><td>153</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.25</td><td>141.858</td><td>153</td><td>0.00</td><td>0.00</td><td>120.37</td><td>12 114.07</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.24 03:10:00</td><td>154</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.62</td><td>143.300</td><td>154</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 114.07</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.24 03:53:13</td><td>155</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.62</td><td>143.069</td><td>155</td><td>0.00</td><td>0.00</td><td>-100.11</td><td>12 013.96</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.25 03:05:00</td><td>156</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.61</td><td>142.960</td><td>156</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 013.96</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.25 06:32:00</td><td>157</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.61</td><td>143.242</td><td>157</td><td>0.00</td><td>0.00</td><td>120.09</td><td>12 134.05</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.28 03:05:00</td><td>158</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.89</td><td>143.668</td><td>158</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 134.05</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.28 04:00:25</td><td>159</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.89</td><td>143.473</td><td>159</td><td>0.00</td><td>0.00</td><td>120.96</td><td>12 255.01</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.29 03:15:00</td><td>160</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.6</td><td>142.069</td><td>160</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 255.01</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.29 04:38:36</td><td>161</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.6</td><td>142.307</td><td>161</td><td>0.00</td><td>0.00</td><td>-100.35</td><td>12 154.66</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.04.30 03:50:00</td><td>162</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.86</td><td>142.329</td><td>162</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 154.66</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.04.30 05:01:37</td><td>163</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.86</td><td>142.529</td><td>163</td><td>0.00</td><td>0.00</td><td>120.68</td><td>12 275.34</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.01 03:20:00</td><td>164</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.22</td><td>142.924</td><td>164</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 275.34</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.01 04:03:59</td><td>165</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.22</td><td>143.043</td><td>165</td><td>0.00</td><td>0.00</td><td>-101.49</td><td>12 173.85</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.02 03:20:00</td><td>166</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.51</td><td>145.681</td><td>166</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 173.85</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.02 05:00:35</td><td>167</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.51</td><td>145.395</td><td>167</td><td>0.00</td><td>0.00</td><td>-100.32</td><td>12 073.53</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.05 04:10:00</td><td>168</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.41</td><td>144.452</td><td>168</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 073.53</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.05 08:14:39</td><td>169</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.41</td><td>144.030</td><td>169</td><td>0.00</td><td>0.00</td><td>120.13</td><td>12 193.66</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.06 03:20:00</td><td>170</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.58</td><td>143.878</td><td>170</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 193.66</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.06 04:21:33</td><td>171</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.58</td><td>144.177</td><td>171</td><td>0.00</td><td>0.00</td><td>120.28</td><td>12 313.94</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.07 03:05:00</td><td>172</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.46</td><td>142.917</td><td>172</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 313.94</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.07 03:23:30</td><td>173</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.46</td><td>143.229</td><td>173</td><td>0.00</td><td>0.00</td><td>-100.20</td><td>12 213.74</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.08 03:10:00</td><td>174</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.93</td><td>143.906</td><td>174</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 213.74</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.08 03:12:55</td><td>175</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.93</td><td>143.751</td><td>175</td><td>0.00</td><td>0.00</td><td>-100.28</td><td>12 113.46</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.09 03:25:00</td><td>176</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.54</td><td>146.130</td><td>176</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 113.46</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.09 03:46:39</td><td>177</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.54</td><td>145.857</td><td>177</td><td>0.00</td><td>0.00</td><td>-101.07</td><td>12 012.39</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.12 03:25:00</td><td>178</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.67</td><td>145.941</td><td>178</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 012.39</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.12 04:14:41</td><td>179</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.67</td><td>146.203</td><td>179</td><td>0.00</td><td>0.00</td><td>120.07</td><td>12 132.46</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.13 03:05:00</td><td>180</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.56</td><td>148.138</td><td>180</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 132.46</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.13 03:58:29</td><td>181</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.56</td><td>147.819</td><td>181</td><td>0.00</td><td>0.00</td><td>120.85</td><td>12 253.31</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.14 03:05:00</td><td>182</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.72</td><td>147.589</td><td>182</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 253.31</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.14 03:53:00</td><td>183</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.72</td><td>147.383</td><td>183</td><td>0.00</td><td>0.00</td><td>-100.64</td><td>12 152.67</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.15 03:05:00</td><td>184</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.62</td><td>146.714</td><td>184</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 152.67</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.15 03:31:26</td><td>185</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.62</td><td>146.477</td><td>185</td><td>0.00</td><td>0.00</td><td>-100.32</td><td>12 052.35</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.16 03:05:00</td><td>186</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.58</td><td>145.259</td><td>186</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 052.35</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.16 10:09:40</td><td>187</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.58</td><td>144.958</td><td>187</td><td>0.00</td><td>0.00</td><td>120.43</td><td>12 172.78</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.19 03:35:00</td><td>188</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.44</td><td>145.115</td><td>188</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 172.78</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.19 10:34:39</td><td>189</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.44</td><td>144.719</td><td>189</td><td>0.00</td><td>0.00</td><td>120.40</td><td>12 293.18</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.20 03:05:00</td><td>190</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.87</td><td>145.068</td><td>190</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 293.18</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.20 03:19:27</td><td>191</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.87</td><td>145.269</td><td>191</td><td>0.00</td><td>0.00</td><td>120.38</td><td>12 413.56</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.21 03:05:00</td><td>192</td><td>USDJPY</td><td>sell</td><td>in</td><td>1</td><td>144.237</td><td>192</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 413.56</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.21 04:01:29</td><td>193</td><td>USDJPY</td><td>buy</td><td>out</td><td>1</td><td>144.064</td><td>193</td><td>0.00</td><td>0.00</td><td>120.09</td><td>12 533.65</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.22 03:10:00</td><td>194</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.28</td><td>143.614</td><td>194</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 533.65</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.22 11:05:30</td><td>195</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.28</td><td>143.000</td><td>195</td><td>0.00</td><td>0.00</td><td>120.22</td><td>12 653.87</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.23 03:05:00</td><td>196</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.89</td><td>143.979</td><td>196</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 653.87</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.23 03:15:05</td><td>197</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.89</td><td>143.817</td><td>197</td><td>0.00</td><td>0.00</td><td>-100.25</td><td>12 553.62</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.26 03:25:00</td><td>198</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.78</td><td>142.718</td><td>198</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 553.62</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.26 04:17:43</td><td>199</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.78</td><td>142.498</td><td>199</td><td>0.00</td><td>0.00</td><td>120.42</td><td>12 674.04</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.27 03:05:00</td><td>200</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.09</td><td>142.525</td><td>200</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 674.04</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.27 03:10:37</td><td>201</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.09</td><td>142.367</td><td>201</td><td>0.00</td><td>0.00</td><td>120.97</td><td>12 795.01</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.28 03:05:00</td><td>202</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.79</td><td>144.060</td><td>202</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 795.01</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.28 04:05:19</td><td>203</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.79</td><td>144.245</td><td>203</td><td>0.00</td><td>0.00</td><td>-101.32</td><td>12 693.69</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.29 03:50:00</td><td>204</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.12</td><td>146.046</td><td>204</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 693.69</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.29 15:05:15</td><td>205</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.12</td><td>144.839</td><td>205</td><td>0.00</td><td>0.00</td><td>-100.00</td><td>12 593.69</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.05.30 03:05:00</td><td>206</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.41</td><td>143.664</td><td>206</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 593.69</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.05.30 03:52:37</td><td>207</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.41</td><td>144.017</td><td>207</td><td>0.00</td><td>0.00</td><td>-100.50</td><td>12 493.19</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.02 03:05:00</td><td>208</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.02</td><td>143.676</td><td>208</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 493.19</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.02 04:05:35</td><td>209</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.02</td><td>143.506</td><td>209</td><td>0.00</td><td>0.00</td><td>120.83</td><td>12 614.02</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.03 03:05:00</td><td>210</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.68</td><td>142.611</td><td>210</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 614.02</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.03 04:11:35</td><td>211</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.68</td><td>142.865</td><td>211</td><td>0.00</td><td>0.00</td><td>120.90</td><td>12 734.92</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.04 04:05:00</td><td>212</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.61</td><td>144.066</td><td>212</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 734.92</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.04 04:20:39</td><td>213</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.61</td><td>143.830</td><td>213</td><td>0.00</td><td>0.00</td><td>-100.09</td><td>12 634.83</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.05 04:35:00</td><td>214</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.47</td><td>142.925</td><td>214</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 634.83</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.05 10:47:35</td><td>215</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.47</td><td>143.291</td><td>215</td><td>0.00</td><td>0.00</td><td>120.05</td><td>12 754.88</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.06 03:10:00</td><td>216</td><td>USDJPY</td><td>buy</td><td>in</td><td>1.03</td><td>143.649</td><td>216</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 754.88</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.06 05:20:04</td><td>217</td><td>USDJPY</td><td>sell</td><td>out</td><td>1.03</td><td>143.818</td><td>217</td><td>0.00</td><td>0.00</td><td>121.03</td><td>12 875.91</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.09 03:20:00</td><td>218</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.97</td><td>144.775</td><td>218</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 875.91</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.09 04:23:36</td><td>219</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.97</td><td>144.624</td><td>219</td><td>0.00</td><td>0.00</td><td>-101.28</td><td>12 774.63</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.10 03:15:00</td><td>220</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.95</td><td>144.463</td><td>220</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 774.63</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.10 03:54:29</td><td>221</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.95</td><td>144.616</td><td>221</td><td>0.00</td><td>0.00</td><td>-100.51</td><td>12 674.12</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.11 03:25:00</td><td>222</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.39</td><td>144.709</td><td>222</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 674.12</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.11 05:02:25</td><td>223</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.39</td><td>145.082</td><td>223</td><td>0.00</td><td>0.00</td><td>-100.27</td><td>12 573.85</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.12 03:30:00</td><td>224</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.72</td><td>144.098</td><td>224</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 573.85</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.12 04:16:36</td><td>225</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.72</td><td>143.858</td><td>225</td><td>0.00</td><td>0.00</td><td>120.12</td><td>12 693.97</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.13 03:05:00</td><td>226</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.36</td><td>142.906</td><td>226</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 693.97</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.13 06:14:27</td><td>227</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.36</td><td>143.306</td><td>227</td><td>0.00</td><td>0.00</td><td>-100.48</td><td>12 593.49</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.16 03:25:00</td><td>228</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.48</td><td>144.442</td><td>228</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 593.49</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.16 08:26:13</td><td>229</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.48</td><td>144.080</td><td>229</td><td>0.00</td><td>0.00</td><td>120.60</td><td>12 714.09</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.17 03:05:00</td><td>230</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.75</td><td>144.838</td><td>230</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 714.09</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.17 03:55:37</td><td>231</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.75</td><td>145.074</td><td>231</td><td>0.00</td><td>0.00</td><td>122.01</td><td>12 836.10</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.18 03:25:00</td><td>232</td><td>USDJPY</td><td>sell</td><td>in</td><td>1.25</td><td>145.302</td><td>232</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 836.10</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.18 04:59:38</td><td>233</td><td>USDJPY</td><td>buy</td><td>out</td><td>1.25</td><td>145.162</td><td>233</td><td>0.00</td><td>0.00</td><td>120.55</td><td>12 956.65</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.19 03:10:00</td><td>234</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.94</td><td>144.888</td><td>234</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 956.65</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.19 04:30:37</td><td>235</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.94</td><td>145.043</td><td>235</td><td>0.00</td><td>0.00</td><td>-100.45</td><td>12 856.20</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.20 03:05:00</td><td>236</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.46</td><td>145.136</td><td>236</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 856.20</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.20 08:27:35</td><td>237</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.46</td><td>145.453</td><td>237</td><td>0.00</td><td>0.00</td><td>-100.25</td><td>12 755.95</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.23 03:20:00</td><td>238</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.67</td><td>146.447</td><td>238</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 755.95</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.23 04:29:13</td><td>239</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.67</td><td>146.710</td><td>239</td><td>0.00</td><td>0.00</td><td>120.11</td><td>12 876.06</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.24 03:35:00</td><td>240</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.42</td><td>145.670</td><td>240</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 876.06</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.24 09:00:38</td><td>241</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.42</td><td>145.254</td><td>241</td><td>0.00</td><td>0.00</td><td>120.29</td><td>12 996.35</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.25 03:45:00</td><td>242</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.8</td><td>145.036</td><td>242</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 996.35</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.25 04:00:15</td><td>243</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.8</td><td>144.854</td><td>243</td><td>0.00</td><td>0.00</td><td>-100.52</td><td>12 895.83</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.26 03:05:00</td><td>244</td><td>USDJPY</td><td>sell</td><td>in</td><td>0.41</td><td>144.836</td><td>244</td><td>0.00</td><td>0.00</td><td>0.00</td><td>12 895.83</td><td>Sell</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.26 09:13:04</td><td>245</td><td>USDJPY</td><td>buy</td><td>out</td><td>0.41</td><td>144.411</td><td>245</td><td>0.00</td><td>0.00</td><td>120.66</td><td>13 016.49</td><td></td></tr>
+   <tr bgcolor="#F7F7F7" align=right><td>2025.06.27 03:35:00</td><td>246</td><td>USDJPY</td><td>buy</td><td>in</td><td>0.41</td><td>144.763</td><td>246</td><td>0.00</td><td>0.00</td><td>0.00</td><td>13 016.49</td><td>Buy</td></tr>
+   <tr bgcolor="#FFFFFF" align=right><td>2025.06.27 04:49:38</td><td>247</td><td>USDJPY</td><td>sell</td><td>out</td><td>0.41</td><td>144.409</td><td>247</td><td>0.00</td><td>0.00</td><td>-100.51</td><td>12 915.98</td><td></td></tr>
+   <tr align="right">
+      <td nowrap colspan="8" style="height: 30px"></td>
+      <td nowrap><b>0.00</b></td>
+      <td nowrap><b>-0.28</b></td>
+      <td nowrap><b>2 916.26</b></td>
+      <td nowrap><b>12 915.98</b></td>
+      <td nowrap></td>
+   </tr>
+   <tr>
+      <td nowrap style="height: 10px"></td>
+   </tr>
+</table>
+</div>
+</body>
+</html>

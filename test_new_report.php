@@ -1,68 +1,63 @@
 <?php
-if (isset($_POST["submit"])) {
-    $target_file = basename($_FILES["reportFile"]["name"]);
-    $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+// Simulate the upload process with our new HTML file
+$target_file = "ReportTester-5036666090.html";
 
-    // Pastikan file adalah .htm atau .html
-    if ($file_type != "htm" && $file_type != "html") {
-        echo "Maaf, hanya file .htm atau .html yang diizinkan.";
-        exit;
-    }
+// Load and convert UTF-16 encoded HTML file
+$html = file_get_contents($target_file);
 
-    // Pindahkan file yang diunggah
-    if (!move_uploaded_file($_FILES["reportFile"]["tmp_name"], $target_file)) {
-        echo "Error: Gagal mengunggah file.";
-        exit;
-    }
-
-    // Mulai parsing file
-    $html = file_get_contents($target_file);
-    
-    // Handle UTF-16 encoded files
-    if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
-        $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
-    }
-    
-    // Enhanced error handling
-    if ($html === false) {
-        echo "Error: Gagal membaca file.";
-        exit;
-    }
-    
-    if (empty($html)) {
-        echo "Error: File kosong.";
-        exit;
-    }
-    // Handle UTF-16 encoded files
-    if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
-        $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
-    }
-    libxml_use_internal_errors(true);
-    $doc = new DOMDocument();
-    $loaded = @$doc->loadHTML($html);
-    
-    if (!$loaded) {
-        echo "Error: Gagal mem-parsing HTML.";
-        $errors = libxml_get_errors();
-        foreach ($errors as $error) {
-            echo "<br>Error detail: " . htmlspecialchars($error->message);
-        }
-        exit;
-    }
-
-    // Extract Settings
-    $settings = extractSettings($doc);
-    
-    // Extract Trades/Deals Table (enhanced to handle both formats)
-    $trades = extractTrades($doc);
-    
-    // Calculate Monthly Statistics
-    $monthlyStats = calculateMonthlyStats($trades);
-    
-    // Display Results
-    displayResults($settings, $monthlyStats);
+// Convert UTF-16 to UTF-8
+if (substr($html, 0, 2) === "\xFF\xFE" || substr($html, 0, 2) === "\xFE\xFF") {
+    $html = iconv("UTF-16", "UTF-8//IGNORE", $html);
 }
 
+libxml_use_internal_errors(true);
+$doc = new DOMDocument();
+$loaded = @$doc->loadHTML($html);
+
+if (!$loaded) {
+    echo "Error: Gagal mem-parsing HTML.";
+    $errors = libxml_get_errors();
+    foreach ($errors as $error) {
+        echo "<br>Error detail: " . htmlspecialchars($error->message);
+    }
+    exit;
+}
+
+// Extract Settings
+$settings = extractSettings($doc);
+
+// Extract Trades/Deals Table (enhanced to handle both formats)
+$trades = extractTradesEnhanced($doc);
+
+echo "<h2>Debug: Trades Found</h2>";
+echo "<p>Jumlah trades ditemukan: " . count($trades) . "</p>";
+
+if (!empty($trades)) {
+    echo "<h3>Sample Trades Data:</h3>";
+    echo "<pre>";
+    for ($i = 0; $i < min(5, count($trades)); $i++) {
+        print_r($trades[$i]);
+        echo "\n";
+    }
+    echo "</pre>";
+}
+
+// Calculate Monthly Statistics
+$monthlyStats = calculateMonthlyStats($trades);
+
+echo "<h2>Debug: Monthly Stats</h2>";
+echo "<p>Jumlah bulan ditemukan: " . count($monthlyStats) . "</p>";
+
+if (!empty($monthlyStats)) {
+    echo "<pre>";
+    print_r($monthlyStats);
+    echo "</pre>";
+}
+
+// Display Results
+displayResults($settings, $monthlyStats);
+
+// Include the functions from upload_enhanced.php
 function extractSettings($doc) {
     $settings = [];
     
@@ -101,120 +96,59 @@ function extractSettings($doc) {
     return $settings;
 }
 
-function extractTrades($doc) {
+function extractTradesEnhanced($doc) {
     $trades = [];
     $tables = $doc->getElementsByTagName('table');
-    
-    // First, try the new format (Deals table)
-    foreach ($tables as $tableIndex => $table) {
-        $rows = $table->getElementsByTagName('tr');
-        
-        // Look for a row containing "Deals"
-        $dealsRowIndex = -1;
-        for ($i = 0; $i < $rows->length; $i++) {
-            $rowText = $rows->item($i)->textContent;
-            if (strpos($rowText, 'Deals') !== false) {
-                $dealsRowIndex = $i;
-                break;
-            }
-        }
-        
-        // If we found the Deals row, look for the header row after it
-        if ($dealsRowIndex !== -1) {
-            // Look for the header row (should contain Time and Profit)
-            $headerRowIndex = -1;
-            $headers = [];
-            
-            // Check the next few rows for headers
-            for ($i = $dealsRowIndex + 1; $i < $rows->length; $i++) {
-                $rowText = $rows->item($i)->textContent;
-                if (strpos($rowText, 'Time') !== false && strpos($rowText, 'Profit') !== false) {
-                    $headerRowIndex = $i;
-                    
-                    // Extract headers
-                    $headerCells = $rows->item($i)->getElementsByTagName('td');
-                    if ($headerCells->length == 0) {
-                        $headerCells = $rows->item($i)->getElementsByTagName('th');
-                    }
-                    
-                    foreach ($headerCells as $th) {
-                        $headers[] = trim($th->textContent);
-                    }
-                    break;
-                }
-            }
-            
-            if ($headerRowIndex !== -1) {
-                // Process data rows (everything after the header row)
-                for ($i = $headerRowIndex + 1; $i < $rows->length; $i++) {
-                    $row = $rows->item($i);
-                    $trade = [];
-                    $cells = $row->getElementsByTagName('td');
-                    
-                    // Handle case where cells might be th elements
-                    if ($cells->length == 0) {
-                        $cells = $row->getElementsByTagName('th');
-                    }
-                    
-                    for ($j = 0; $j < min(count($headers), $cells->length); $j++) {
-                        $trade[$headers[$j]] = trim($cells->item($j)->textContent);
-                    }
-                    
-                    // Filter out balance rows and only add trades with profit/loss data
-                    if (isset($trade['Profit']) && $trade['Profit'] !== '' && 
-                        isset($trade['Type']) && $trade['Type'] !== 'balance') {
-                        $trades[] = $trade;
-                    }
-                }
-                return $trades; // Found the right table, return immediately
-            }
-        }
-    }
-    
-    // If no Deals table found, try the old format (Trades/Orders table)
+    $tradesTable = null;
+
+    // Cari tabel yang berisi riwayat transaksi (baik Trades maupun Deals)
     foreach ($tables as $table) {
         $header = $table->getElementsByTagName('tr')->item(0);
         if ($header) {
             $headerText = $header->textContent;
-            // Check for old format (Trades/Orders)
-            if (strpos($headerText, 'Profit') !== false && strpos($headerText, 'Order') !== false) {
+            // Check for both old format (Trades/Orders) and new format (Deals)
+            if ((strpos($headerText, 'Profit') !== false && strpos($headerText, 'Order') !== false) ||
+                (strpos($headerText, 'Profit') !== false && strpos($headerText, 'Time') !== false && strpos($headerText, 'Deals') !== false)) {
                 $tradesTable = $table;
-                
-                $rows = $tradesTable->getElementsByTagName('tr');
-                $headerRow = $rows->item(0);
-                $headers = [];
-                
-                // Get column headers (handle both td and th elements)
-                $headerCells = $headerRow->getElementsByTagName('td');
-                if ($headerCells->length == 0) {
-                    $headerCells = $headerRow->getElementsByTagName('th');
-                }
-                
-                foreach ($headerCells as $th) {
-                    $headers[] = trim($th->textContent);
-                }
-                
-                // Process each trade row
-                for ($i = 1; $i < $rows->length; $i++) {
-                    $row = $rows->item($i);
-                    $trade = [];
-                    $cells = $row->getElementsByTagName('td');
-                    
-                    // Handle case where cells might be th elements
-                    if ($cells->length == 0) {
-                        $cells = $row->getElementsByTagName('th');
-                    }
-                    
-                    for ($j = 0; $j < min(count($headers), $cells->length); $j++) {
-                        $trade[$headers[$j]] = trim($cells->item($j)->textContent);
-                    }
-                    
-                    // Filter out empty rows and only add trades with profit/loss data
-                    if (isset($trade['Profit']) && $trade['Profit'] !== '') {
-                        $trades[] = $trade;
-                    }
-                }
-                break; // Found the right table, no need to check others
+                break;
+            }
+        }
+    }
+
+    if ($tradesTable) {
+        $rows = $tradesTable->getElementsByTagName('tr');
+        $headerRow = $rows->item(0);
+        $headers = [];
+        
+        // Get column headers (handle both td and th elements)
+        $headerCells = $headerRow->getElementsByTagName('td');
+        if ($headerCells->length == 0) {
+            $headerCells = $headerRow->getElementsByTagName('th');
+        }
+        
+        foreach ($headerCells as $th) {
+            $headers[] = trim($th->textContent);
+        }
+        
+        // Process each trade row
+        for ($i = 1; $i < $rows->length; $i++) {
+            $row = $rows->item($i);
+            $trade = [];
+            $cells = $row->getElementsByTagName('td');
+            
+            // Handle case where cells might be th elements
+            if ($cells->length == 0) {
+                $cells = $row->getElementsByTagName('th');
+            }
+            
+            for ($j = 0; $j < min(count($headers), $cells->length); $j++) {
+                $trade[$headers[$j]] = trim($cells->item($j)->textContent);
+            }
+            
+            // Filter out balance rows and only add trades with profit/loss data
+            if (isset($trade['Profit']) && $trade['Profit'] !== '' && 
+                isset($trade['Type']) && $trade['Type'] !== 'balance') {
+                $trades[] = $trade;
             }
         }
     }
@@ -231,7 +165,9 @@ function calculateMonthlyStats($trades) {
         if (!isset($trade['Time']) || !isset($trade['Profit'])) continue;
         
         $time = $trade['Time'];
-        $profit = floatval(str_replace(',', '', $trade['Profit']));
+        // Remove commas from profit for proper float conversion
+        $profitStr = str_replace(',', '', $trade['Profit']);
+        $profit = floatval($profitStr);
         
         // Parse date to get month and year
         // Assuming format like "2023.05.15 14:30:00"
@@ -473,8 +409,8 @@ function displayResults($settings, $monthlyStats) {
                 <thead>
                 <tr>
                     <th onclick='sortTable(0)' class='sortable'>Bulan Tahun</th>
-                    <th onclick='sortTable(1)' class='sortable'>Winning Trades</th>
-                    <th onclick='sortTable(2)' class='sortable'>Lossing Trades</th>
+                    <th onclick='sortTable(1)' class='sortable'>Profit Trade</th>
+                    <th onclick='sortTable(2)' class='sortable'>Loss Trade</th>
                     <th onclick='sortTable(3)' class='sortable'>Jumlah Trade</th>
                     <th onclick='sortTable(4)' class='sortable'>Winrate</th>
                     <th onclick='sortTable(5)' class='sortable'>Gross Profit</th>
@@ -500,8 +436,8 @@ function displayResults($settings, $monthlyStats) {
             
             echo "<tr>
                     <td>{$bulanTahun}</td>
-                    <td>" . number_format($stat['winning_trades'], 2) . "</td>
-                    <td>" . number_format($stat['losing_trades'], 2) . "</td>
+                    <td>" . number_format($stat['profit_trade'], 2) . "</td>
+                    <td>" . number_format($stat['loss_trade'], 2) . "</td>
                     <td>{$stat['jumlah_trade']}</td>
                     <td>" . number_format($stat['winrate'], 2) . "%</td>
                     <td>" . number_format($stat['gross_profit'], 2) . "</td>
@@ -517,7 +453,8 @@ function displayResults($settings, $monthlyStats) {
         
         echo "</tbody></table>";
     } else {
-        echo "<p>Tidak ada data bulanan yang ditemukan.</p>";
+        echo "<p>Tidak ada data bulanan yang ditemukan. Pastikan file laporan berisi data trades.</p>";
+        // Note: $trades variable not available in this scope in the test script
     }
     
     echo "<br><a href='index.php'>Unggah file lain</a>
