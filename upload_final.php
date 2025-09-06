@@ -63,34 +63,93 @@ if (isset($_POST["submit"])) {
 function extractSettings($doc) {
     $settings = [];
     
-    // Look for settings in the document
-    $elements = $doc->getElementsByTagName('*');
-    foreach ($elements as $element) {
-        $text = $element->textContent;
-        if (strpos($text, 'Symbol:') !== false) {
-            $parts = explode('Symbol:', $text);
-            if (isset($parts[1])) {
-                $settings['Symbol'] = trim(explode(' ', $parts[1])[0]);
+    // Look for settings in table rows
+    $tables = $doc->getElementsByTagName('table');
+    
+    foreach ($tables as $table) {
+        $rows = $table->getElementsByTagName('tr');
+        
+        // Look for the "Settings" header
+        $inSettingsSection = false;
+        $currentKey = '';
+        
+        foreach ($rows as $row) {
+            $cells = $row->getElementsByTagName('td');
+            
+            // Check if this row marks the start of the settings section
+            if ($cells->length > 0) {
+                $firstCell = $cells->item(0);
+                if ($firstCell && strpos($firstCell->textContent, 'Settings') !== false) {
+                    $inSettingsSection = true;
+                    continue;
+                }
+                
+                // Check if this row marks the end of the settings section
+                if ($inSettingsSection && $cells->length > 0) {
+                    $firstCell = $cells->item(0);
+                    if ($firstCell && strpos($firstCell->textContent, 'Results') !== false) {
+                        $inSettingsSection = false;
+                        break;
+                    }
+                }
             }
-        } elseif (strpos($text, 'Period:') !== false) {
-            $parts = explode('Period:', $text);
-            if (isset($parts[1])) {
-                $settings['Period'] = trim(explode(' ', $parts[1])[0]);
+            
+            // Process settings rows
+            if ($inSettingsSection && $cells->length >= 2) {
+                $keyCell = $cells->item(0);
+                $valueCell = $cells->item(1);
+                
+                if ($keyCell && $valueCell) {
+                    $keyText = trim($keyCell->textContent);
+                    $valueText = trim($valueCell->textContent);
+                    
+                    // Remove trailing colons from keys
+                    $keyText = rtrim($keyText, ':');
+                    
+                    // If key is empty, this is a continuation of the previous setting
+                    if (empty($keyText) && !empty($currentKey)) {
+                        // Append to the previous value
+                        $settings[$currentKey] .= "\n" . $valueText;
+                    } else if (!empty($keyText)) {
+                        // New setting
+                        $settings[$keyText] = $valueText;
+                        $currentKey = $keyText;
+                    }
+                }
             }
-        } elseif (strpos($text, 'Model:') !== false) {
-            $parts = explode('Model:', $text);
-            if (isset($parts[1])) {
-                $settings['Model'] = trim(explode(' ', $parts[1])[0]);
-            }
-        } elseif (strpos($text, 'Initial deposit:') !== false) {
-            $parts = explode('Initial deposit:', $text);
-            if (isset($parts[1])) {
-                $settings['Initial deposit'] = trim($parts[1]);
-            }
-        } elseif (strpos($text, 'Spread:') !== false) {
-            $parts = explode('Spread:', $text);
-            if (isset($parts[1])) {
-                $settings['Spread'] = trim(explode(' ', $parts[1])[0]);
+        }
+    }
+    
+    // Fallback to the original method if no settings were found
+    if (empty($settings)) {
+        $elements = $doc->getElementsByTagName('*');
+        foreach ($elements as $element) {
+            $text = $element->textContent;
+            if (strpos($text, 'Symbol:') !== false) {
+                $parts = explode('Symbol:', $text);
+                if (isset($parts[1])) {
+                    $settings['Symbol'] = trim(explode(' ', $parts[1])[0]);
+                }
+            } elseif (strpos($text, 'Period:') !== false) {
+                $parts = explode('Period:', $text);
+                if (isset($parts[1])) {
+                    $settings['Period'] = trim(explode(' ', $parts[1])[0]);
+                }
+            } elseif (strpos($text, 'Model:') !== false) {
+                $parts = explode('Model:', $text);
+                if (isset($parts[1])) {
+                    $settings['Model'] = trim(explode(' ', $parts[1])[0]);
+                }
+            } elseif (strpos($text, 'Initial deposit:') !== false) {
+                $parts = explode('Initial deposit:', $text);
+                if (isset($parts[1])) {
+                    $settings['Initial deposit'] = trim($parts[1]);
+                }
+            } elseif (strpos($text, 'Spread:') !== false) {
+                $parts = explode('Spread:', $text);
+                if (isset($parts[1])) {
+                    $settings['Spread'] = trim(explode(' ', $parts[1])[0]);
+                }
             }
         }
     }
@@ -375,21 +434,157 @@ function calculateSharpeRatio($profits) {
 }
 
 function displayResults($settings, $monthlyStats) {
+    // Calculate total trades and net profit for summary
+    $totalTrades = 0;
+    $totalNetProfit = 0;
+    
+    foreach ($monthlyStats as $stat) {
+        $totalTrades += $stat['jumlah_trade'];
+        $totalNetProfit += $stat['net_profit'];
+    }
+    
     echo "<!DOCTYPE html>
     <html>
     <head>
         <title>Hasil Analisis Laporan Backtest</title>
         <style>
-            body { font-family: Arial, sans-serif; margin: 20px; }
-            table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-            th { background-color: #f2f2f2; cursor: pointer; }
-            th:hover { background-color: #ddd; }
-            h2 { color: #333; }
-            .settings { background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
-            .sortable { background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAJUlEQVR42mNgYGD4z8DAwMgABXAGKQYmwN8I1QzTFK8aBgYAJI0TjCK7jowAAAAASUVORK5CYII='); background-repeat: no-repeat; background-position: center right; padding-right: 15px; }
-            .sort-asc::after { content: ' ↑'; }
-            .sort-desc::after { content: ' ↓'; }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f5f7fa;
+                color: #333;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #1976D2, #2196F3);
+                color: white;
+                padding: 20px;
+                border-radius: 6px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .settings-section {
+                background-color: #E3F2FD;
+                border-left: 4px solid #1976D2;
+                padding: 15px;
+                margin-bottom: 20px;
+                border-radius: 0 4px 4px 0;
+            }
+
+            .results-summary {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin: 20px 0;
+            }
+
+            .result-card {
+                background: white;
+                border-radius: 6px;
+                padding: 15px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                border-top: 3px solid #1976D2;
+                text-align: center;
+            }
+
+            .result-value {
+                font-size: 1.5em;
+                font-weight: bold;
+                color: #1976D2;
+                margin: 5px 0;
+            }
+
+            .result-label {
+                font-size: 0.9em;
+                color: #666;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                background: white;
+                border-radius: 6px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            th {
+                background-color: #1976D2;
+                color: white;
+                text-align: left;
+                padding: 12px 15px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            th:hover {
+                background-color: #0D47A1;
+            }
+
+            td {
+                padding: 12px 15px;
+                border-bottom: 1px solid #eee;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            tr:hover {
+                background-color: #E3F2FD;
+            }
+
+            .sort-asc::after {
+                content: \" \\2191\";
+            }
+
+            .sort-desc::after {
+                content: \" \\2193\";
+            }
+
+            a {
+                color: #1976D2;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+            
+            .settings-table {
+                width: 100%;
+                border-collapse: collapse;
+                background: white;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            
+            .settings-table td {
+                padding: 8px 12px;
+                border-bottom: 1px solid #ddd;
+            }
+            
+            .settings-table td:first-child {
+                font-weight: bold;
+                width: 30%;
+                background-color: #f5f9ff;
+            }
+            
+            .input-value {
+                white-space: pre-line;
+            }
         </style>
         <script>
             function sortTable(columnIndex) {
@@ -448,15 +643,23 @@ function displayResults($settings, $monthlyStats) {
         </script>
     </head>
     <body>
-        <h2>Hasil Analisis Laporan Backtest</h2>
-        
-        <div class='settings'>
-            <h3>Settings</h3>";
+        <div class='container'>
+            <div class='header'>
+                <h1>Hasil Analisis Laporan Backtest</h1>
+            </div>
+            
+            <div class='settings-section'>
+                <h3>Settings dari laporan backtest</h3>";
     
     if (!empty($settings)) {
-        echo "<table>";
+        echo "<table class='settings-table'>";
         foreach ($settings as $key => $value) {
-            echo "<tr><td><strong>$key</strong></td><td>$value</td></tr>";
+            // Special handling for Inputs to make it more readable
+            if ($key === 'Inputs') {
+                echo "<tr><td>$key</td><td class='input-value'>" . nl2br(htmlspecialchars($value)) . "</td></tr>";
+            } else {
+                echo "<tr><td>$key</td><td>" . htmlspecialchars($value) . "</td></tr>";
+            }
         }
         echo "</table>";
     } else {
@@ -464,6 +667,17 @@ function displayResults($settings, $monthlyStats) {
     }
     
     echo "</div>
+        
+        <div class='results-summary'>
+            <div class='result-card'>
+                <div class='result-label'>Total Trades</div>
+                <div class='result-value'>$totalTrades</div>
+            </div>
+            <div class='result-card'>
+                <div class='result-label'>Net Profit</div>
+                <div class='result-value'>" . number_format($totalNetProfit, 2) . "</div>
+            </div>
+        </div>
         
         <h3>Analisa Bulanan</h3>";
     
@@ -517,10 +731,10 @@ function displayResults($settings, $monthlyStats) {
         echo "</tbody></table>";
     } else {
         echo "<p>Tidak ada data bulanan yang ditemukan. Pastikan file laporan berisi data trades.</p>";
-        echo "<p>Jumlah trades ditemukan: " . count($trades) . "</p>";
     }
     
     echo "<br><a href='index.php'>Unggah file lain</a>
+        </div>
     </body>
     </html>";
 }
